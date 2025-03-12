@@ -1,0 +1,37 @@
+---
+const links = [
+  { href: "/index.html", text: "INICIO" },
+  { href: "/nosotros.html", text: "NOSOTROS" },
+  { href: "/eventos.html", text: "EVENTOS" },
+  { href: "/clasificaciones.html", text: "CLASIFICACIONES" },
+  { href: "/arbitros.html", text: "ARBITROS" },
+  { href: "/quienhaganado.html", text: "GANADORES" },
+];
+---
+
+<header
+  class="w-full h-15 relative z-20 flex justify-between items-center px-5 mt-1"
+>
+  <nav class="flex-1">
+    <ul class="flex items-center">
+      {
+        links.map((link) => (
+          <li>
+            <a
+              href={link.href}
+              class="text-white no-underline mr-[1.2vw] text-[0.9rem] hover:text-yellow-400 hover:text-base transition-all duration-200"
+            >
+              {link.text}
+            </a>
+          </li>
+        ))
+      }
+      <button
+        class="bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
+        onclick="location.href='login.html'"
+      >
+        INGRESAR
+      </button>
+    </ul>
+  </nav>
+</header>

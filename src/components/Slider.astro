@@ -1,0 +1,128 @@
+---
+import NewsCard from "./NewsCard.astro";
+
+const newsItems = [
+  {
+    title: "¡Nuevo patrocinador se une a nuestra liga infantil!",
+    description: `
+            La liga de fútbol infantil ha dado
+            un gran paso al asegurar el
+            patrocinio de una reconocida
+            marca internacional, lo que
+            permitirá mejorar la experiencia
+            para nuestros jugadores.<br>
+            Descubre quién es el nuevo aliado
+            de la liga.
+            <b>¡Haz clic aquí!</b>
+        `,
+    imageUrl: "/Images/noticia.jpg",
+  },
+  {
+    title:
+      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    description: `
+            Los equipos están listos para
+            enfrentarse en el partido más
+            esperado del año. Las emociones
+            están al límite, y la final promete
+            sorpresas para todos los
+            asistentes. Conoce todos los
+            detalles de este emocionante
+            encuentro.
+            <b>¡Mira más!</b>
+        `,
+    imageUrl: "/Images/noticia.jpg",
+  },
+  {
+    title:
+      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    description: `
+            La liga de fútbol infantil ha dado
+            un gran paso al asegurar el
+            patrocinio de una reconocida
+            marca internacional, lo que
+            permitirá mejorar la experiencia
+            para nuestros jugadores.
+            Descubre quién es el nuevo aliado
+            de la liga.
+            <b>¡Haz clic aquí!</b>
+        `,
+    imageUrl: "/Images/noticia.jpg",
+  },
+  {
+    title:
+      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    description: `
+            La liga de fútbol infantil ha dado
+            un gran paso al asegurar el
+            patrocinio de una reconocida
+            marca internacional, lo que
+            permitirá mejorar la experiencia
+            para nuestros jugadores.
+            Descubre quién es el nuevo aliado
+            de la liga.
+            <b>¡Haz clic aquí!</b>
+        `,
+    imageUrl: "/Images/noticia.jpg",
+  },
+];
+---
+
+<section class="text-center py-[20px] mt-[10vh]">
+  <h2 class="text-2xl font-bold mb-8">ÚLTIMAS NOTICIAS</h2>
+
+  <div class="relative">
+    <button
+      id="prevButton"
+      class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700 transition-colors"
+      aria-label="Anterior"
+    >
+      &larr;
+    </button>
+
+    <div
+      id="sliderContainer"
+      class="flex overflow-x-auto scroll-snap-x-mandatory gap-[20px] py-[20px] px-4 scroll-smooth"
+    >
+      {
+        newsItems.map((news, index) => (
+          <NewsCard
+            title={news.title}
+            description={news.description}
+            imageUrl={news.imageUrl}
+          />
+        ))
+      }
+    </div>
+
+    <button
+      id="nextButton"
+      class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700 transition-colors"
+      aria-label="Siguiente"
+    >
+      &rarr;
+    </button>
+  </div>
+</section>
+
+<script>
+  const sliderContainer = document.getElementById("sliderContainer");
+  const prevButton = document.getElementById("prevButton");
+  const nextButton = document.getElementById("nextButton");
+
+  // Scroll a la izquierda
+  prevButton.addEventListener("click", () => {
+    sliderContainer.scrollBy({
+      left: -sliderContainer.clientWidth,
+      behavior: "smooth",
+    });
+  });
+
+  // Scroll a la derecha
+  nextButton.addEventListener("click", () => {
+    sliderContainer.scrollBy({
+      left: sliderContainer.clientWidth,
+      behavior: "smooth",
+    });
+  });
+</script>
