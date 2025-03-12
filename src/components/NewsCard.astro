@@ -2,17 +2,18 @@
 const { title, description, imageUrl } = Astro.props;
 ---
 
-<div class="border-4 border-[#ff5722] rounded-[20px] shadow-lg p-4 h-[400px] w-[300px] md:w-[626px] flex-none scroll-snap-align-start">
+<div class="grid grid-cols-2 grid-rows-[auto_1fr] gap-3 border-4 border-[#ff5722] rounded-[20px] shadow-lg p-4 h-full w-full md:w-[626px] mx-auto">
     <!-- Título -->
-    <h3 class="text-[1.2em] my-[10px] font-bold">{title}</h3>
+    <h3 class="col-span-2 text-white text-[0.9em] font-bold mb-2">{title}</h3>
 
     <!-- Descripción -->
-    <p class="text-[0.9em] text-white" set:html={description}></p>
+    <p class="text-white text-[0.8em]" set:html={description}></p>
 
     <!-- Imagen -->
     <img
-        src={imageUrl}
-        alt="Imagen noticia"
-        class="w-full h-[195px] mt-4 object-cover rounded-[10px]"
+        src={imageUrl || "/placeholder.svg"}
+        alt={`Imagen: ${title}`}
+        class="w-full max-w-[18.75rem] h-[12.188rem] object-cover"
     />
 </div>
+

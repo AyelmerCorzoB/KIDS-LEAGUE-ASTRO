@@ -5,124 +5,288 @@ const newsItems = [
   {
     title: "¡Nuevo patrocinador se une a nuestra liga infantil!",
     description: `
-            La liga de fútbol infantil ha dado
-            un gran paso al asegurar el
-            patrocinio de una reconocida
-            marca internacional, lo que
-            permitirá mejorar la experiencia
-            para nuestros jugadores.<br>
-            Descubre quién es el nuevo aliado
-            de la liga.
-            <b>¡Haz clic aquí!</b>
-        `,
+      La liga de fútbol infantil ha dado
+      un gran paso al asegurar el
+      patrocinio de una reconocida
+      marca internacional, lo que
+      permitirá mejorar la experiencia
+      para nuestros jugadores.<br>
+      Descubre quién es el nuevo aliado
+      de la liga.
+      <b>¡Haz clic aquí!</b>
+    `,
     imageUrl: "/Images/noticia.jpg",
   },
   {
-    title:
-      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    title: "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
     description: `
-            Los equipos están listos para
-            enfrentarse en el partido más
-            esperado del año. Las emociones
-            están al límite, y la final promete
-            sorpresas para todos los
-            asistentes. Conoce todos los
-            detalles de este emocionante
-            encuentro.
-            <b>¡Mira más!</b>
-        `,
+      Los equipos están listos para
+      enfrentarse en el partido más
+      esperado del año. Las emociones
+      están al límite, y la final promete
+      sorpresas para todos los
+      asistentes. Conoce todos los
+      detalles de este emocionante
+      encuentro.
+      ¡Mira más!
+    `,
     imageUrl: "/Images/noticia.jpg",
   },
   {
-    title:
-      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    title: "Entrenamientos especiales para mejorar el rendimiento",
     description: `
-            La liga de fútbol infantil ha dado
-            un gran paso al asegurar el
-            patrocinio de una reconocida
-            marca internacional, lo que
-            permitirá mejorar la experiencia
-            para nuestros jugadores.
-            Descubre quién es el nuevo aliado
-            de la liga.
-            <b>¡Haz clic aquí!</b>
-        `,
+      La liga ha implementado nuevos
+      programas de entrenamiento para
+      que los jugadores mejoren sus
+      habilidades y estén en su mejor
+      forma para la próxima temporada.
+      ¡Descubre más!
+    `,
     imageUrl: "/Images/noticia.jpg",
   },
   {
-    title:
-      "Gran final de la temporada: ¡Los equipos se preparan para el partido decisivo!",
+    title: "Inscripciones abiertas para la próxima temporada",
     description: `
-            La liga de fútbol infantil ha dado
-            un gran paso al asegurar el
-            patrocinio de una reconocida
-            marca internacional, lo que
-            permitirá mejorar la experiencia
-            para nuestros jugadores.
-            Descubre quién es el nuevo aliado
-            de la liga.
-            <b>¡Haz clic aquí!</b>
-        `,
+      ¡No te quedes fuera! Las
+      inscripciones para la próxima
+      temporada ya están abiertas.
+      Asegura tu lugar en la liga y
+      vive la emoción del fútbol infantil.
+      ¡Inscríbete ahora!
+    `,
     imageUrl: "/Images/noticia.jpg",
   },
 ];
 ---
 
-<section class="text-center py-[20px] mt-[10vh]">
-  <h2 class="text-2xl font-bold mb-8">ÚLTIMAS NOTICIAS</h2>
-
-  <div class="relative">
-    <button
-      id="prevButton"
-      class="absolute left-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700 transition-colors"
-      aria-label="Anterior"
-    >
-      &larr;
-    </button>
-
-    <div
-      id="sliderContainer"
-      class="flex overflow-x-auto scroll-snap-x-mandatory gap-[20px] py-[20px] px-4 scroll-smooth"
-    >
+<section class="relative mt-30 mb-30 px-4 max-w-6xl mx-auto">
+  <h2 class="text-2xl md:text-3xl text-center text-white font-bold mb-8">ÚLTIMAS NOTICIAS</h2>
+  
+  <!-- Carrusel -->
+  <div id="news-carousel" class="relative w-full" data-carousel="slide">
+    <!-- Contenedor del carrusel -->
+    <div class="relative h-64 md:h-96 overflow-hidden rounded-lg">
       {
         newsItems.map((news, index) => (
-          <NewsCard
-            title={news.title}
-            description={news.description}
-            imageUrl={news.imageUrl}
-          />
+          <div 
+            class={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0'}`} 
+            data-carousel-item={index === 0 ? 'active' : ''}
+          >
+            <NewsCard
+              title={news.title}
+              description={news.description}
+              imageUrl={news.imageUrl}
+            />
+          </div>
         ))
       }
     </div>
 
+    <!-- Indicadores del carrusel -->
+    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
+      {
+        newsItems.map((_, index) => (
+          <button
+            type="button"
+            class={`w-3 h-3 rounded-full ${index === 0 ? 'bg-white' : 'bg-white/50'} hover:bg-white transition-all duration-300`}
+            aria-current={index === 0 ? "true" : "false"}
+            aria-label={`Noticia ${index + 1}`}
+            data-carousel-slide-to={index}
+          ></button>
+        ))
+      }
+    </div>
+
+    <!-- Controles del carrusel -->
     <button
-      id="nextButton"
-      class="absolute right-0 top-1/2 transform -translate-y-1/2 bg-gray-800 text-white p-2 rounded-full z-10 hover:bg-gray-700 transition-colors"
-      aria-label="Siguiente"
+      type="button"
+      class="absolute top-0 start-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-prev
+      aria-label="Ver noticia anterior"
     >
-      &rarr;
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 1 1 5l4 4"/>
+        </svg>
+        <span class="sr-only">Anterior</span>
+      </span>
+    </button>
+    <button
+      type="button"
+      class="absolute top-0 end-0 z-30 flex items-center justify-center h-full px-4 cursor-pointer group focus:outline-none"
+      data-carousel-next
+      aria-label="Ver siguiente noticia"
+    >
+      <span class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-white/30 dark:bg-gray-800/30 group-hover:bg-white/50 dark:group-hover:bg-gray-800/60 group-focus:ring-4 group-focus:ring-white dark:group-focus:ring-gray-800/70 group-focus:outline-none">
+        <svg
+          class="w-4 h-4 text-white dark:text-gray-800 rtl:rotate-180"
+          aria-hidden="true"
+          xmlns="http://www.w3.org/2000/svg"
+          fill="none"
+          viewBox="0 0 6 10"
+        >
+          <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m1 9 4-4-4-4"/>
+        </svg>
+        <span class="sr-only">Siguiente</span>
+      </span>
     </button>
   </div>
 </section>
 
 <script>
-  const sliderContainer = document.getElementById("sliderContainer");
-  const prevButton = document.getElementById("prevButton");
-  const nextButton = document.getElementById("nextButton");
+  // Script para manejar el carrusel
+  document.addEventListener('astro:page-load', () => {
+    const carousel = document.getElementById("news-carousel");
+    if (!carousel) return;
+    
+    const items = carousel.querySelectorAll("[data-carousel-item]");
+    const indicators = carousel.querySelectorAll("[data-carousel-slide-to]");
+    const prevButton = carousel.querySelector("[data-carousel-prev]");
+    const nextButton = carousel.querySelector("[data-carousel-next]");
 
-  // Scroll a la izquierda
-  prevButton.addEventListener("click", () => {
-    sliderContainer.scrollBy({
-      left: -sliderContainer.clientWidth,
-      behavior: "smooth",
-    });
-  });
+    let currentIndex = 0;
+    let interval: number | null | undefined = null;
+    const autoPlayDelay = 5000; // 5 segundos entre slides
 
-  // Scroll a la derecha
-  nextButton.addEventListener("click", () => {
-    sliderContainer.scrollBy({
-      left: sliderContainer.clientWidth,
-      behavior: "smooth",
+    const showItem = (index: number) => {
+      // Ocultar todos los items
+      items.forEach((item, i) => {
+        item.classList.remove('opacity-100');
+        item.classList.add('opacity-0');
+        item.setAttribute('data-carousel-item', '');
+        
+        // Actualizar indicadores
+        if (indicators[i]) {
+          indicators[i].setAttribute('aria-current', 'false');
+          indicators[i].classList.remove('bg-white');
+          indicators[i].classList.add('bg-white/50');
+        }
+      });
+
+      // Mostrar el item actual
+      if (items[index]) {
+        items[index].classList.remove('opacity-0');
+        items[index].classList.add('opacity-100');
+        items[index].setAttribute('data-carousel-item', 'active');
+      }
+
+      // Actualizar el indicador actual
+      if (indicators[index]) {
+        indicators[index].setAttribute('aria-current', 'true');
+        indicators[index].classList.remove('bg-white/50');
+        indicators[index].classList.add('bg-white');
+      }
+
+      currentIndex = index;
+    };
+
+    const nextItem = () => {
+      const newIndex = (currentIndex + 1) % items.length;
+      showItem(newIndex);
+    };
+
+    const prevItem = () => {
+      const newIndex = (currentIndex - 1 + items.length) % items.length;
+      showItem(newIndex);
+    };
+
+    // Configurar los indicadores
+    indicators.forEach((indicator, index) => {
+      indicator.addEventListener("click", () => {
+        resetAutoPlay();
+        showItem(index);
+      });
     });
+
+    // Configurar los botones de navegación
+    if (prevButton) {
+      prevButton.addEventListener("click", () => {
+        resetAutoPlay();
+        prevItem();
+      });
+    }
+    
+    if (nextButton) {
+      nextButton.addEventListener("click", () => {
+        resetAutoPlay();
+        nextItem();
+      });
+    }
+
+    // Iniciar autoplay
+    const startAutoPlay = () => {
+      stopAutoPlay();
+      interval = setInterval(nextItem, autoPlayDelay);
+    };
+
+    const stopAutoPlay = () => {
+      if (interval) {
+        clearInterval(interval);
+        interval = null;
+      }
+    };
+
+    const resetAutoPlay = () => {
+      stopAutoPlay();
+      startAutoPlay();
+    };
+
+    // Pausar autoplay cuando el usuario interactúa con el carrusel
+    carousel.addEventListener('mouseenter', stopAutoPlay);
+    carousel.addEventListener('mouseleave', startAutoPlay);
+    
+    // Pausar autoplay cuando la página no está visible
+    document.addEventListener('visibilitychange', () => {
+      if (document.hidden) {
+        stopAutoPlay();
+      } else {
+        startAutoPlay();
+      }
+    });
+
+    // Inicializar el carrusel
+    showItem(0);
+    startAutoPlay();
+
+    // Limpiar al desmontar
+    return () => {
+      stopAutoPlay();
+      carousel.removeEventListener('mouseenter', stopAutoPlay);
+      carousel.removeEventListener('mouseleave', startAutoPlay);
+    };
   });
 </script>
+
+<style>
+  /* Estilos adicionales para mejorar la apariencia y transiciones */
+  [data-carousel-item] {
+    transition: opacity 0.7s ease;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  /* Soporte para prefers-reduced-motion */
+  @media (prefers-reduced-motion: reduce) {
+    [data-carousel-item] {
+      transition: none;
+    }
+  }
+  
+  /* Añadir efecto hover a las tarjetas de noticias */
+  [data-carousel-item="active"] > div {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  [data-carousel-item="active"] > div:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255, 87, 34, 0.3);
+  }
+</style>
+
