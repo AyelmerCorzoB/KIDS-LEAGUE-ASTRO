@@ -7,31 +7,113 @@ const links = [
   { href: "/arbitrospage", text: "ARBITROS" },
   { href: "/quienhaganado", text: "GANADORES" },
 ];
+
+let isMenuOpen = false; // Estado para controlar la visibilidad del menú hamburguesa
 ---
 
-<header
-  class="w-full h-15 absolute z-20 flex justify-between items-center px-5 mt-1"
->
-  <nav class="flex-1">
+<header class="w-full h-15 absolute z-20 flex justify-between items-center px-5 mt-1">
+  <!-- Logo o título (solo visible en móviles) -->
+  <div class="text-white text-lg font-bold block md:hidden">
+    Kids League
+  </div>
+
+  <!-- Menú hamburguesa (solo visible en móviles) -->
+  <button
+    class="md:hidden text-white focus:outline-none"
+    onclick={`isMenuOpen = !isMenuOpen;`}
+    aria-label="Abrir menú"
+  >
+    <svg
+      class="w-8 h-8"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+      xmlns="http://www.w3.org/2000/svg"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16m-7 6h7"
+      ></path>
+    </svg>
+  </button>
+
+  <!-- Menú de navegación (visible en pantallas grandes) -->
+  <nav class="hidden md:flex flex-1">
     <ul class="flex items-center">
-      {
-        links.map((link) => (
-          <li>
-            <a
-              href={link.href}
-              class="text-white no-underline mr-[1.2vw] text-[0.9rem] hover:text-yellow-400 hover:text-base transition-all duration-200"
-            >
-              {link.text}
-            </a>
-          </li>
-        ))
-      }
+      {links.map((link) => (
+        <li>
+          <a
+            href={link.href}
+            class="text-white no-underline mr-[1.2vw] text-[0.9rem] hover:text-yellow-400 hover:text-base transition-all duration-200"
+          >
+            {link.text}
+          </a>
+        </li>
+      ))}
       <button
-        class="bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
+        class="absolute right-10 bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
         onclick="location.href='login.html'"
       >
         INGRESAR
       </button>
     </ul>
   </nav>
+
+  <!-- Menú hamburguesa (contenido, solo visible en móviles) -->
+  <div
+    class={`fixed top-0 left-0 w-full h-full bg-black bg-opacity-90 transform ${
+      isMenuOpen ? "translate-x-0" : "-translate-x-full"
+    } transition-transform duration-300 ease-in-out md:hidden z-30`}
+  >
+    <button
+      class="absolute top-5 right-5 text-white focus:outline-none"
+      onclick={`isMenuOpen = false;`}
+      aria-label="Cerrar menú"
+    >
+      <svg
+        class="w-8 h-8"
+        fill="none"
+        stroke="currentColor"
+        viewBox="0 0 24 24"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"
+        ></path>
+      </svg>
+    </button>
+
+    <ul class="flex flex-col items-center justify-center h-full">
+      {links.map((link) => (
+        <li class="my-4">
+          <a
+            href={link.href}
+            class="text-white no-underline text-2xl hover:text-yellow-400 transition-all duration-200"
+          >
+            {link.text}
+          </a>
+        </li>
+      ))}
+      <button
+        class="bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold mt-8 hover:bg-orange-600 transition-colors duration-200"
+        onclick="location.href='login.html'"
+      >
+        INGRESAR
+      </button>
+    </ul>
+  </div>
 </header>
+
+<!-- Script para manejar el estado del menú hamburguesa -->
+<script>
+  let isMenuOpen = false;
+
+  function toggleMenu() {
+    isMenuOpen = !isMenuOpen;
+  }
+</script>
