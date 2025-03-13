@@ -1,0 +1,65 @@
+---
+import Navigation from "../../components/Navigation.astro";
+import { imgs } from "../../data/arbitros";
+import Layout from "../../layouts/Layout.astro";
+import "../../styles/global.css";
+
+// Generar rutas estáticas para cada árbitro
+export async function getStaticPaths() {
+  return imgs.map((arbitro) => ({
+    params: { arbitroId: arbitro.href.split("/").pop() },
+  }));
+}
+
+// Obtener el ID del árbitro desde los parámetros de la ruta
+const { arbitroId } = Astro.params;
+
+// Buscar el árbitro correspondiente
+const arbitro = imgs.find((arb) => arb.href === `/arbitros/${arbitroId}`);
+---
+
+<Layout class="min-h-screen">
+  <Navigation />
+
+  {
+    arbitro ? (
+      <div class="container mx-auto flex justify-center gap-5vw mt-[10vh]">
+        <img
+          src={arbitro.src}
+          alt={arbitro.text}
+          class="w-[20vw] h-auto object-contain rounded-lg p-2"
+        />
+        <div class="bg-[#ff4d1217] text-white p-6 border-4 border-[#FF4E12] rounded-lg">
+          <p class="text-lg">{arbitro.msg}</p>
+        </div>
+      </div>
+    ) : (
+      <p class="text-center text-white text-xl mt-10">Árbitro no encontrado</p>
+    )
+  }
+
+  <div class="flex justify-end mr-[3vw] mt-[10vh]">
+    <a
+      href="/arbitrospage"
+      class="w-48 h-12 border-2 border-white rounded-lg text-white bg-[#F27405] text-lg flex justify-center items-center hover:bg-[#FFA726] transition-colors"
+    >
+      REGRESAR
+    </a>
+  </div>
+</Layout>
+
+<style>
+  html,
+  body {
+    display: block;
+    background: url("/Images/BACKGROUND.svg");
+    font-family: "Poppins", sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+</style>

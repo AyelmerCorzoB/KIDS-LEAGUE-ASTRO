@@ -1,0 +1,47 @@
+---
+import { imgs } from '../data/arbitros';
+
+// Obtener el ID del árbitro desde la URL
+const { arbitroId } = Astro.params;
+
+// Buscar el árbitro correspondiente
+const arbitro = imgs.find(arb => arb.href === `/arbitros/${arbitroId}`);
+---
+
+{arbitro ? (
+    <div class="container mx-auto mt-[10vh] flex justify-center gap-5vw">
+        <div class="arbitro">
+            <img
+                src={arbitro.src}
+                alt={arbitro.text}
+                class="w-[20vw] h-auto object-contain rounded-[1em] p-[0.5em]"
+            />
+        </div>
+        <div class="contenido bg-[#ff4d1217] text-white p-[2vh] border-[0.25em] border-[#FF4E12] rounded-[1.25em]">
+            <p>
+                Experiencia: Árbitro en ligas infantiles y juveniles <br />
+                en Colombia, especialmente en torneos regionales <br />
+                y escolares.<br /><br />
+                Estilo: Paciente y pedagógico, ayuda a los niños <br />
+                a entender las reglas del juego mientras arbitra.<br /><br />
+
+                Logros: Reconocido en su comunidad por su enfoque <br />
+                formativo y su capacidad para crear un ambiente <br />
+                respetuoso en el campo.
+            </p>
+        </div>
+    </div>
+) : (
+    <div class="container mx-auto mt-[10vh] flex justify-center gap-5vw">
+        <p>Árbitro no encontrado.</p>
+    </div>
+)}
+
+<div class="regresar flex justify-end mr-[3vw] mt-[10vh]">
+    <a
+        href="/arbitros"
+        class="w-[12.5vw] h-[5vh] border-[0.15em] border-white rounded-[0.75em] text-white bg-[#F27405] text-[1rem] cursor-pointer flex justify-center items-center"
+    >
+        REGRESAR
+    </a>
+</div>

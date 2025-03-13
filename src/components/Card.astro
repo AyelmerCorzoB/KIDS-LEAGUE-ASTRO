@@ -1,8 +1,8 @@
 ---
 const imgs = [
-    { src: '/Images/arbitro1.jpg', text: 'Arbitro 1', href: 'arb1.html' },
-    { src: '/Images/arbitro2.png', text: 'Arbitro 2', href: 'arb2.html' },
-    { src: '/Images/arbitro3.png', text: 'Arbitro 3', href: 'arb3.html' },
+    { src: '/Images/arbitro1.jpg', text: 'Arbitro 1', href: '/arbitros/1' },
+    { src: '/Images/arbitro2.png', text: 'Arbitro 2', href: '/arbitros/2' },
+    { src: '/Images/arbitro3.png', text: 'Arbitro 3', href: '/arbitros/3' },
 ];
 ---
 
@@ -14,12 +14,12 @@ const imgs = [
                 alt={img.text}
                 class="w-full md:w-[23.75rem] max-w-[23.75rem] max-h-[310px] object-contain rounded-[0.625em] p-[0.3em] box-border"
             />
-            <button
-                class="mt-[1vh] w-full md:w-[18vw] max-w-[240px] h-[7vh] max-h-[55px] border-none rounded-[1.25em] text-white bg-[#065903] cursor-pointer text-[1.1rem] hover:bg-[#FFA726] transition-colors duration-200"
-                onclick={`location.href='${img.href}'`}
+            <a
+                href={img.href}
+                class="mt-[1vh] w-full md:w-[18vw] max-w-[240px] h-[7vh] max-h-[55px] border-none rounded-[1.25em] text-white bg-[#065903] cursor-pointer text-[1.1rem] hover:bg-[#FFA726] transition-colors duration-200 flex justify-center items-center"
             >
                 {img.text}
-            </button>
+            </a>
         </div>
     ))}
 </div>
