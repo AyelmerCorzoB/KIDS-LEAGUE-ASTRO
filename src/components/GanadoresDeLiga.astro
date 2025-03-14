@@ -1,42 +1,90 @@
-<section class="container-main">
-    <div class="cajas">
-      <div class="titulo-main">
-        <h2>GANADORES DE LIGA</h2>
-      </div>
-      <div class="caja">
-        <img
-          class="imagen-caja"
-          src="/Images/trofeo-ganadores.svg"
-          alt="Trofeo"
-        />
-        <div class="texto-caja">
-          <h3>ALIANZA MOTILONA</h3>
-          <p>COPA NORTE</p>
-        </div>
-        <img
-          class="imagen2-caja"
-          src="/Images/boton-play-ganadores.svg"
-          alt="Botón Play"
-        />
-      </div>
-      <div class="caja">
-        <img
-          class="imagen-caja"
-          src="/Images/trofeo2-ganadores.svg"
-          alt="Trofeo"
-        />
-        <div class="texto-caja">
-          <h3>ALIANZA MOTILONA</h3>
-          <p>COPA NORTE</p>
-        </div>
-        <img
-          class="imagen2-caja"
-          src="/Images/boton-play-ganadores.svg"
-          alt="Botón Play"
-        />
-      </div>
+---
+// Astro component for Winners Section
+---
+
+<section
+  class="flex flex-col lg:flex-row justify-around w-full max-w-[1200px] mx-auto gap-8 pt-30 px-4"
+>
+  <div class="flex flex-col gap-10 justify-evenly">
+    <div class="text-center lg:text-left">
+      <h2 class="text-3xl text-white md:text-4xl font-bold tracking-wide">
+        GANADORES DE LIGA
+      </h2>
     </div>
-    <div class="imagen-main">
-      <img src="/Images/ganadores.PNG" alt="Imagen Ganadores" />
+
+    <!-- First winner card -->
+    <div
+      class="flex items-center bg-black/20 border-2 border-[#ff6347]/50 rounded-lg p-6 md:p-10 w-full max-w-[40rem] h-auto md:h-[9.688rem] shadow-lg transition-transform hover:scale-[1.02]"
+    >
+      <img
+        class="w-12 h-12 md:w-[5.625rem] md:h-[5.625rem] rounded-full mr-4 md:mr-10"
+        src="/Images/trofeo-ganadores.svg"
+        alt="Trofeo de campeón"
+      />
+      <div class="flex-1">
+        <h3
+          class="text-[#FFD60A] font-bold text-xl md:text-[2rem] leading-tight"
+        >
+          ALIANZA MOTILONA
+        </h3>
+        <p class="text-white text-base md:text-[1.5rem]">COPA NORTE</p>
+      </div>
+      <button
+        class="focus:outline-none focus:ring-2 focus:ring-[#FFD60A] rounded-full"
+        aria-label="Ver detalles"
+      >
+        <img
+          class="w-10 h-10 md:w-[5.625rem] md:h-[5.625rem] rounded-full ml-2"
+          src="/Images/boton-play-ganadores.svg"
+          alt="Ver detalles"
+        />
+      </button>
     </div>
-  </section>
+
+    <!-- Second winner card -->
+    <div
+      class="flex items-center bg-black/20 border-2 border-[#ff6347]/50 rounded-lg p-6 md:p-10 w-full max-w-[40rem] h-auto md:h-[9.688rem] shadow-lg transition-transform hover:scale-[1.02]"
+    >
+      <img
+        class="w-12 h-12 md:w-[5.625rem] md:h-[5.625rem] rounded-full mr-4 md:mr-10"
+        src="/Images/trofeo2-ganadores.svg"
+        alt="Trofeo de campeón"
+        width="90"
+        height="90"
+      />
+      <div class="flex-1">
+        <h3
+          class="text-[#FFD60A] font-bold text-xl md:text-[2rem] leading-tight"
+        >
+          ALIANZA MOTILONA
+        </h3>
+        <p class="text-white text-base md:text-[1.5rem]">COPA NORTE</p>
+      </div>
+      <button
+        class="focus:outline-none focus:ring-2 focus:ring-[#FFD60A] rounded-full"
+        aria-label="Ver detalles"
+      >
+        <img
+          class="w-10 h-10 md:w-[5.625rem] md:h-[5.625rem] rounded-full ml-auto"
+          src="/Images/boton-play-ganadores.svg"
+          alt="Ver detalles"
+          width="90"
+          height="90"
+        />
+      </button>
+    </div>
+  </div>
+
+  <!-- Main image -->
+  <div class="mt-8 lg:mt-0 flex justify-center lg:justify-end ">
+    <img
+      class="rounded-3xl border border-green-500 border-3 shadow-lg w-[26.25rem] h-[28rem] object-cover hidden sm:block"
+      src="/Images/ganadores.PNG"
+      alt="Imagen de equipos ganadores"
+    />
+  </div>
+</section>
+
+<style>
+  /* You can add any Astro-specific styles here if needed */
+</style>
