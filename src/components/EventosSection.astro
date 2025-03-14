@@ -1,0 +1,66 @@
+---
+import EventosVs from "./EventosVs.astro";
+
+const events = [
+  {
+    title: "Campeonato Infantil",
+    category: "Infantil A",
+    location: "Estadio Los Niños",
+    description: [
+      "Los equipos que quieran",
+      "participar en el torneo",
+      "deben escribir al número",
+      "3115998002",
+    ],
+  },
+  {
+    title: "Torneo Relámpago",
+    category: "Juvenil",
+    location: "Cancha Todos Unidos",
+    description: [
+      "Los equipos que deseen",
+      "participar en este torneo",
+      "deben llamar al 321567808",
+    ],
+  },
+  {
+    title: "Gran Final",
+    category: "Libre",
+    location: "Campo Oro",
+    description: [
+      "Por motivos de vacaciones",
+      "se aplaza el campeonato",
+      "para el 15 de febrero de 2025",
+    ],
+  },
+];
+---
+
+<section class="text-center pt-12">
+  <h1 class="text-4xl text-white font-bold mt-20 mb-8">Próximos Eventos</h1>
+  <div class="flex justify-center items-center gap-10 flex-wrap">
+    {
+      events.map((event) => (
+        <div class="cards bg-black border w-[18.75rem] h-[19.113rem] border-yellow-400 rounded-lg p-[1.25rem]">
+          <h2 class="text-yellow-400 text-2xl font-bold mb-3">{event.title}</h2>
+          <div class="text-white">
+          <p><strong>Categoría:</strong> {event.category}</p>
+          <br>
+          <p >Lugar: {event.location}</p>
+          <br>
+          {
+            event.description.map((line) => (
+              <p>{line}</p>
+            ))
+          }
+          </div>
+        </div>
+      ))
+    }
+  </div>
+</section>
+<style>
+    .cards {
+        background-color: rgba(0, 0, 0, 0.5);
+    }
+</style>

@@ -2,19 +2,26 @@
 import Navigation from '../components/Navigation.astro';
 import "../styles/global.css";
 import Layout from '../layouts/Layout.astro';
-import Arbitros from '../components/Arbitros.astro';
+import Footer from '../components/Footer.astro';
+import HeroSobreNosotros from '../components/HeroSobreNosotros.astro';
+import TeamSobreNosotros from '../components/TeamSobreNosotros.astro';
+import Rectangulo from '../components/bloques/Rectangulo.astro';
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout>
-	<Navigation />
-	<Arbitros />
+<Layout class="relative min-h-screen">
+    <Rectangulo />
+    <Navigation  />
+    <HeroSobreNosotros />
+    <TeamSobreNosotros />
+    <Footer />
 </Layout>
 
 <style>
-    body {
+    
+    html,body {
         display: block; 
     background: url('/Images/BACKGROUND.svg');
     font-family: 'Poppins', sans-serif;
@@ -24,4 +31,5 @@ import Arbitros from '../components/Arbitros.astro';
     background-position: center;
     margin: 0;
     }
+    
 </style>
