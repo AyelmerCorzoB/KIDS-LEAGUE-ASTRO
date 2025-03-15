@@ -1,50 +1,112 @@
-<div class="w-200 container mx-auto pt-34">
-    <!-- Título -->
-    <div class="text-white text-2xl text-center ">
-      <p>VIERNES 23 NOVIEMBRE <br> 5:00 PM EN VIVO</p>
+<div class="relative w-full max-w-7xl mx-auto px-4 py-30 md:py-0 md:pt-35">
+  <!-- Logo (top left) -->
+  <div class="absolute left-4 hidden md:block md:top-15 md:left-8 z-10">
+    <img src="/Images/KIDSLEAGUE.png" alt="Logo Kids League" class="md:w-32" />
+  </div>
+  
+  <!-- Fechas (top right) -->
+  <div class="absolute hidden md:block right-4 md:top-15 md:right-8 z-10">
+    <img src="/Images/image 12.png" alt="Fechas" class="md:w-50" />
+  </div>
+
+  <!-- Contenido principal -->
+  <div>
+    <!-- Título con fecha y hora -->
+    <div class="text-center">
+      <h2 class="text-white text-xl md:text-[1.2rem] font-bold tracking-wide">
+        VIERNES 23 NOVIEMBRE <br /> 
+        <span class="inline-block text-yellow-500 mt-1 md:mt-2">5:00 PM EN VIVO</span>
+      </h2>
     </div>
-  
-    <!-- Contenedor de cajas -->
-    <div class="grid grid-cols-[auto,400px,auto] grid-rows-3 gap-0">
-      <!-- Jugador 1 -->
-      <div class="row-start-1 row-end-4 flex  justify-end items-center">
-        <img src="/Images/image 11 (1).png" alt="Jugador Equipo A" class="w-40">
+
+    <!-- Contenedor principal del partido -->
+    <div class="relative flex flex-col md:flex-row items-center justify-center gap-6 md:gap-0">
+      <!-- Jugador 1 (izquierda) -->
+      <div class="hidden md:block md:w-1/4 lg:w-1/3 text-right">
+        <img 
+          src="/Images/image 11 (1).png" 
+          alt="Jugador Equipo A" 
+          class="w-32 md:w-36 lg:w-48 xl:w-56 inline-block transform transition-transform duration-500 hover:scale-105"
+        />
       </div>
-  
-      <!-- Títulos y lugar -->
-      <div class="col-start-2 col-end-3 row-start-1 row-end-3 flex flex-col items-center">
-        <p class="text-white text-2xl text-center">
-          kids league A <span class="text-yellow-300 text-6xl font-bold">VS</span> kids league B
-        </p>
-        <br>
-        <p class="text-white text-2xl text-center">
-          lugar: CARRERA 23 *12 <br>LA ESPERANZA
-        </p>
+
+      <!-- Contenido central (VS) -->
+      <div class="w-full md:w-2/5 lg:w-1/3 flex flex-col items-center">
+        <!-- Nombres de equipos y VS -->
+        <div class="text-center mb-6 md:mb-4">
+          <p class="text-white text-lg md:text-xl lg:text-2xl font-medium">
+            <span class="block md:inline">KIDS LEAGUE A</span>
+            <span class="text-yellow-300 text-4xl md:text-5xl lg:text-6xl font-bold block my-2 md:inline md:mx-4">VS</span>
+            <span class="block md:inline">KIDS LEAGUE B</span>
+          </p>
+        </div>
+        
+        <!-- Lugar -->
+        <div class="text-center mb-6 md:mb-10">
+          <p class="text-white text-base md:text-lg lg:text-xl">
+            LUGAR: <br /><span class="font-bold">CARRERA 23 #12</span><br />
+            <span class="text-yellow-100">LA ESPERANZA</span>
+          </p>
+        </div>
+        
+        <!-- Balón (visible en todos los tamaños) -->
+        <div class="mt-2 md:mt-4">
+          <img 
+            src="/Images/WhatsApp_Image_2024-11-05_at_9.00.37_AM-removebg-preview.svg" 
+            alt="Balón" 
+            class="w-16 md:w-20 animate-bounce"
+          />
+        </div>
       </div>
-  
-      <!-- Balón -->
-      <div class="col-start-2 col-end-3 row-start-3 row-end-4 flex justify-center items-center">
-        <img src="/Images/WhatsApp_Image_2024-11-05_at_9.00.37_AM-removebg-preview.svg" alt="Balón" class="w-20">
-      </div>
-  
-      <!-- Jugador 2 -->
-      <div class="col-start-3 col-end-4 row-start-1 row-end-4 flex items-center">
-        <img src="/Images/image.png" alt="Jugador Equipo B" class="w-36">
+
+      <!-- Jugador 2 (derecha) -->
+      <div class="hidden md:block md:w-100">
+        <img 
+          src="/Images/image.png" 
+          alt="Jugador Equipo B" 
+          class="w-32 md:w-full lg:w-48 xl:w-56 inline-block transform transition-transform duration-500 hover:scale-105"
+        />
       </div>
     </div>
-  
-    <!-- Botón de próximos eventos -->
-    <button
-  class="absolute left-5 top-[70vh] bg-[#ff5722] text-white border-2 border-white px-8 py-4 rounded-full cursor-pointer text-lg font-bold shadow-lg hover:bg-[#ff9800] hover:text-black hover:border-[#ff5722] hover:-translate-y-1 hover:shadow-xl transition-all duration-300"
-  onclick="location.href='/eventsfuture'"
->
-  PRÓXIMOS EVENTOS
-</button>
-    <div class="absolute top-10 left-10 mt-8 flex justify-center">
-        <img src="/Images/KIDSLEAGUE.png" alt="Logo" class="w-35">
-      </div>
-    <!-- Fechas -->
-    <div class="absolute top-10 right-10 mt-8 flex justify-center">
-      <img src="/Images/image 12.png" alt="Fechas" class="w-48">
+    
+    <!-- Versión móvil de jugadores (solo visible en móvil) -->
+    <div class="hidden md:blockflex justify-center gap-4 mt-6 md:hidden">
+      <img 
+        src="/Images/image 11 (1).png" 
+        alt="Jugador Equipo A" 
+        class="w-24 h-auto"
+      />
+      <img 
+        src="/Images/image.png" 
+        alt="Jugador Equipo B" 
+        class="w-24 h-auto"
+      />
     </div>
   </div>
+
+  <!-- Botón de próximos eventos -->
+  <div class="absolute bottom-2 left-[50%] md:left-8 mt-100 z-10">
+    <a 
+      href="/eventsfuture" 
+      class="inline-block bg-[#ff5722] text-white border-2 border-white px-4  md:px-8 md:py-4 rounded-full text-sm md:text-lg font-bold shadow-lg hover:bg-[#ff9800] hover:text-black hover:border-[#ff5722] transform transition-all duration-300 hover:-translate-y-1 hover:shadow-xl"
+    >
+      PRÓXIMOS EVENTOS
+    </a>
+  </div>
+</div>
+
+<style>
+  /* Añadir un fondo sutil si es necesario */
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+  
+  @keyframes bounce {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
+  }
+</style>

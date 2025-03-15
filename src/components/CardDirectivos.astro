@@ -1,0 +1,25 @@
+---
+const imgs = [
+    { src: '/Images/registrar_jugador.jpg', text: 'Registrar Jugador', href: '/registros/r_jugador' },
+    { src: '/Images/noticia3.jpg', text: 'Registrar Equipo', href: '/arbitros/2' },
+    { src: '/Images/noticia2.jpg', text: 'Registrar Campeonato', href: '/arbitros/3' },
+];
+---
+
+<div class="flex justify-center items-center w-full h-auto mt-[10vh]">
+    {imgs.map((img, index) => (
+        <div class="flex flex-col items-center mx-[2vw] my-[2vh] w-full md:w-auto">
+            <img
+                src={img.src}
+                alt={img.text}
+                class="w-full md:w-[23.75rem] max-w-[23.75rem] max-h-[310px] object-contain rounded-lg p-[0.3em] box-border"
+            />
+            <a
+                href={img.href}
+                class="mt-[1vh] w-full md:w-[18vw] max-w-[240px] h-[7vh] max-h-[55px] border-none rounded-[1.25em] text-white bg-[#065903] cursor-pointer text-[1.1rem] hover:bg-[#FFA726] transition-colors duration-200 flex justify-center items-center"
+            >
+                {img.text}
+            </a>
+        </div>
+    ))}
+</div>

@@ -1,0 +1,190 @@
+---
+// Importar las funciones desde el archivo JavaScript
+---
+
+<header>
+    <div class="absolute top-5 left-5">
+        <img src="/Images/Logo.png" alt="Logo Kids League" class="w-32" />
+    </div>
+</header>
+
+<div class="min-h-screen flex items-center justify-center p-4">
+    <!-- Formulario de Jugador -->
+    <div
+        class="bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6"
+        id="formJugador"
+    >
+        <h2 class="text-2xl font-bold text-center text-white">
+            REGISTRO DE <span class="text-[#FFD600]">JUGADOR</span>
+        </h2>
+
+        <form class="space-y-4">
+            <div>
+                <label
+                    for="nombre"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Nombre</label
+                >
+                <input
+                    type="text"
+                    id="nombre"
+                    placeholder="Nombre"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="apellido"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Apellido</label
+                >
+                <input
+                    type="text"
+                    id="apellido"
+                    placeholder="Apellido"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="documento"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Documento</label
+                >
+                <input
+                    type="text"
+                    id="documento"
+                    placeholder="Documento"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="fechaNacimiento"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Fecha de Nacimiento</label
+                >
+                <input
+                    type="date"
+                    id="fechaNacimiento"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button
+                    type="button"
+                    onclick="location.href='/sesiones/sesion-directivo'"
+                    class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                    VOLVER
+                </button>
+                <button
+                    type="button"
+                    id="mostrarFormJugador"
+                    class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                    SIGUIENTE
+                </button>
+            </div>
+        </form>
+    </div>
+
+    <!-- Formulario de Acudiente -->
+    <div
+        class="bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6 hidden"
+        id="formAcudiente"
+    >
+        <h2 class="text-2xl font-bold text-center text-white">
+            DATOS DEL <span class="text-[#FFD600]">ACUDIENTE</span>
+        </h2>
+
+        <form class="space-y-4">
+            <div>
+                <label
+                    for="nombreAcudiente"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Nombre</label
+                >
+                <input
+                    type="text"
+                    id="nombreAcudiente"
+                    placeholder="Nombre"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="apellidoAcudiente"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Apellido</label
+                >
+                <input
+                    type="text"
+                    id="apellidoAcudiente"
+                    placeholder="Apellido"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="telefonoAcudiente"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Teléfono</label
+                >
+                <input
+                    type="tel"
+                    id="telefonoAcudiente"
+                    placeholder="Teléfono"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div>
+                <label
+                    for="emailAcudiente"
+                    class="block text-sm font-medium text-white mb-1"
+                    >Email</label
+                >
+                <input
+                    type="email"
+                    id="emailAcudiente"
+                    placeholder="Email"
+                    required
+                    class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                />
+            </div>
+
+            <div class="flex justify-between mt-6">
+                <button
+                    type="button"
+                    class="mostrarFormJugador"
+                    class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                    VOLVER
+                </button>
+                <button
+                    type="submit"
+                    id="mostrarFormAcudiante"
+                    class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+                >
+                    REGISTRAR
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<script src="../scripts/registrojugador.js"></script>

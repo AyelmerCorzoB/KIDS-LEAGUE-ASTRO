@@ -1,7 +1,16 @@
 ---
 import Card from "./Card.astro";
+import CardArbitrosAdmin from "./CardArbitrosAdmin.astro";
+import CardDirectivos from "./CardDirectivos.astro";
+
+// Obtener la ruta actual
+const currentPath = new URL(Astro.request.url).pathname;
+
+// Determinar qué componente renderizar
+const isRegistroPage = currentPath.includes("/sesiones/sesion-arbitro");
+const isDirectivoPage = currentPath.includes("/sesiones/sesion-directivo");
 ---
 
 <div class="flex justify-center w-full h-auto">
-    <Card />
+  {isDirectivoPage ? <CardDirectivos /> : (isRegistroPage ? <CardArbitrosAdmin /> : <Card />)}
 </div>
