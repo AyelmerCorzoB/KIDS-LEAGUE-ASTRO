@@ -11,26 +11,26 @@ interface Trophy {
 
 // Default trophies data
 const defaultTrophies: Trophy[] = [
-  { 
-    id: 1, 
-    image: "/Images/imagen-tofreo 1.svg", 
-    name: "Campeon", 
+  {
+    id: 1,
+    image: "/Images/imagen-tofreo 1.svg",
+    name: "Campeon",
     height: "430px",
-    description: "Premio al campeón absoluto" 
+    description: "Premio al campeón absoluto",
   },
-  { 
-    id: 2, 
-    image: "/Images/trofeo2-ganadores.svg", 
-    name: "Sub Campeon", 
+  {
+    id: 2,
+    image: "/Images/trofeo2-ganadores.svg",
+    name: "Sub Campeon",
     height: "309px",
-    description: "Premio al subcampeón" 
+    description: "Premio al subcampeón",
   },
-  { 
-    id: 3, 
-    image: "/Images/imagen-tofreo 3.svg", 
-    name: "Tercer Lugar", 
+  {
+    id: 3,
+    image: "/Images/imagen-tofreo 3.svg",
+    name: "Tercer Lugar",
     height: "209px",
-    description: "Premio al tercer lugar" 
+    description: "Premio al tercer lugar",
   },
 ];
 
@@ -50,78 +50,88 @@ const {
 ---
 
 <section class="relative w-full max-w-7xl mx-auto px-4 py-24 overflow-hidden">
-  
   <div class="absolute inset-0 -z-10 overflow-hidden">
-    <div class="absolute top-1/4 left-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"></div>
-    <div class="absolute bottom-1/3 right-1/3 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"></div>
-  </div> 
+    <div
+      class="absolute top-1/4 left-1/4 w-64 h-64 bg-yellow-500/10 rounded-full blur-3xl"
+    >
+    </div>
+    <div
+      class="absolute bottom-1/3 right-1/3 w-96 h-96 bg-yellow-500/5 rounded-full blur-3xl"
+    >
+    </div>
+  </div>
 
-  
   <div class="relative w-full flex justify-center mb-16">
     <div class="relative w-full max-w-md">
-      <img 
-        src="/Images/rectangle-orange-titulo-trofeo.svg" 
-        alt="Fondo de título" 
+      <img
+        src="/Images/rectangle-orange-titulo-trofeo.svg"
+        alt="Fondo de título"
         class="w-full h-auto"
         loading="lazy"
       />
       <div class="absolute inset-0 flex items-center justify-center">
-        <h2 class="text-white text-2xl md:text-3xl font-bold tracking-wider drop-shadow-md">
+        <h2
+          class="text-white text-2xl md:text-3xl font-bold tracking-wider drop-shadow-md"
+        >
           {title}
         </h2>
       </div>
     </div>
   </div>
 
-  
-  <div class={`
+  <div
+    class={`
     relative w-full rounded-3xl p-8 md:p-12
     ${backgroundColor} 
     border border-yellow-500/20 shadow-xl
-  `}>
-    
-    <div class="flex flex-col md:flex-row justify-around items-end  md:gap-4">
-      {trophies.map((trophy, index) => (
-        <div class="trophy-container group flex flex-col items-center gap-6" data-delay={index * 0.2}>
-          <div class="relative">
-            <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-1 h-40 bg-gradient-to-b from-yellow-400/0 via-yellow-400/30 to-yellow-400/0 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
-            
-            <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            
-            <img 
-              src={trophy.image || "/placeholder.svg"} 
-              alt={`${trophy.name} - ${trophy.description || 'Premio de reconocimiento'}`} 
-              class="w-[15.625rem] h-auto object-contain transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:-translate-y-2  drop-shadow-lg"
-              style={`height: ${trophy.height};`}
-              loading="lazy"
-            />
-            
-          </div>
-          
-          
-          <button class={`
+  `}
+  >
+    <div
+      class="flex flex-col md:flex-row justify-center items-center md:items-end md:gap-4"
+    >
+      {
+        trophies.map((trophy, index) => (
+          <div
+            class="trophy-container group flex flex-col items-center gap-6"
+            data-delay={index * 0.2}
+          >
+            <div class="relative">
+              <div class="absolute -top-20 left-1/2 -translate-x-1/2 w-1 h-40 bg-gradient-to-b from-yellow-400/0 via-yellow-400/30 to-yellow-400/0 blur-md opacity-0 group-hover:opacity-100 transition-opacity duration-700" />
+
+              <div class="absolute bottom-0 left-1/2 -translate-x-1/2 w-32 h-8 bg-yellow-400/20 rounded-full blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+
+              <img
+                src={trophy.image || "/placeholder.svg"}
+                alt={`${trophy.name} - ${trophy.description || "Premio de reconocimiento"}`}
+                class="w-48 h-auto object-contain transition-all duration-500 ease-out transform group-hover:scale-105 group-hover:-translate-y-2 drop-shadow-lg
+                     sm:w-5 md:w-[15.625rem]"
+                style={`height: ${trophy.height};`}
+                loading="lazy"
+              />
+            </div>
+
+            <button
+              class={`
             relative w-[167px] h-[56px] ${buttonColor} text-black text-xl font-black 
             rounded-full border-none overflow-hidden
             transition-all duration-300 ease-out
             shadow-md hover:shadow-yellow-400/50
             transform hover:scale-105 hover:-translate-y-1
             group-hover:bg-yellow-400
-          `}>
-            
-            <span class="relative z-10">{trophy.name}</span>
-            
-            
-            <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out"></span>
-          </button>
-          
-          
-          {trophy.description && (
-            <p class="text-center text-white/80 max-w-[200px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-sm">
-              {trophy.description}
-            </p>
-          )}
-        </div>
-      ))}
+          `}
+            >
+              <span class="relative z-10">{trophy.name}</span>
+              <span class="absolute inset-0 w-full h-full bg-gradient-to-r from-transparent via-white/30 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000 ease-in-out" />
+            </button>
+
+            {trophy.description && (
+              <p class="text-center text-white/80 max-w-[200px] opacity-0 group-hover:opacity-100 transition-opacity duration-500 delay-200 text-sm">
+                {trophy.description}
+              </p>
+            )}
+          </div>
+        ))
+      }
     </div>
   </div>
 </section>
@@ -133,28 +143,43 @@ const {
     transform: translateY(20px);
     animation: fadeIn 0.8s ease-out forwards;
   }
-  
+
   @keyframes fadeIn {
     to {
       opacity: 1;
       transform: translateY(0);
     }
   }
-  
+
   /* Apply different animation delays based on data-delay attribute */
-  .trophy-container[data-delay="0"] { animation-delay: 0s; }
-  .trophy-container[data-delay="0.2"] { animation-delay: 0.2s; }
-  .trophy-container[data-delay="0.4"] { animation-delay: 0.4s; }
-  
+  .trophy-container[data-delay="0"] {
+    animation-delay: 0s;
+  }
+  .trophy-container[data-delay="0.2"] {
+    animation-delay: 0.2s;
+  }
+  .trophy-container[data-delay="0.4"] {
+    animation-delay: 0.4s;
+  }
+
   /* Floating animation for trophies */
   @keyframes float {
-    0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-10px);
+    }
   }
-  
+
   /* Shine effect animation */
   @keyframes shine {
-    from { transform: translateX(-100%) rotate(35deg); }
-    to { transform: translateX(100%) rotate(35deg); }
+    from {
+      transform: translateX(-100%) rotate(35deg);
+    }
+    to {
+      transform: translateX(100%) rotate(35deg);
+    }
   }
 </style>

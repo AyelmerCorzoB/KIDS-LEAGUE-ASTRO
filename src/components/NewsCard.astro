@@ -1,19 +1,35 @@
 ---
+// Define las propiedades del componente
 const { title, description, imageUrl } = Astro.props;
 ---
 
-<div class="grid grid-cols-2 grid-rows-[auto_1fr] gap-3 border-4 border-[#ff5722] rounded-[20px] shadow-lg p-4 h-full w-full md:w-[626px] mx-auto">
+<div class="bg-gray-800/50 rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-shadow duration-300 border border-gray-700/30">
+  <!-- Imagen -->
+  <div class="relative h-48 overflow-hidden">
+    <a href="/Images/noticia.jpg"><img
+      src={imageUrl || "/placeholder.svg"}
+      alt={`Imagen: ${title}`}
+      class="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+    /></a>
+    <div class="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent"></div>
+  </div>
+
+  <!-- Contenido -->
+  <div class="p-6">
     <!-- Título -->
-    <h3 class="col-span-2 text-white text-[0.9em] font-bold mb-2">{title}</h3>
+    <h3 class="text-xl font-bold text-white mb-3">{title}</h3>
 
     <!-- Descripción -->
-    <p class="text-white text-[0.8em]" set:html={description}></p>
+    <p class="text-gray-300 text-sm leading-relaxed" set:html={description}></p>
 
-    <!-- Imagen -->
-    <img
-        src={imageUrl || "/placeholder.svg"}
-        alt={`Imagen: ${title}`}
-        class="w-full max-w-[18.75rem] h-[12.188rem] object-cover"
-    />
+    <!-- Botón (opcional) -->
+    <div class="mt-4">
+      <a
+        href="#"
+        class="inline-block px-6 py-2 bg-[#ff5722] text-white font-semibold rounded-lg hover:bg-[#ff5722]/90 transition-colors duration-300"
+      >
+        Leer más
+      </a>
+    </div>
+  </div>
 </div>
-
