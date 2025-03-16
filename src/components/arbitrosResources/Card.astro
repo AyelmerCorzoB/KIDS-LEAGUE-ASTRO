@@ -6,17 +6,17 @@ const imgs = [
 ];
 ---
 
-<div class="flex justify-center items-center w-full h-auto mt-[20vh]">
+<div class="flex flex-wrap md:flex-row justify-center items-center w-full h-auto mt-[8vh] md:mt-[20vh]">
     {imgs.map((img, index) => (
-        <div class="flex flex-col items-center mx-[2vw] my-[2vh] w-full md:w-auto">
+        <div class="flex flex-col items-center mx-[2vw] my-[1vh] w-full md:w-auto">
             <img
                 src={img.src}
                 alt={img.text}
-                class="w-full md:w-[23.75rem] max-w-[23.75rem] max-h-[310px] object-contain rounded-[0.625em] p-[0.3em] box-border"
+                class="w-[8rem] md:w-[23.75rem] max-w-[23.75rem] max-h-[310px] object-contain rounded-[0.625em] p-[0.3em] box-border"
             />
             <a
                 href={img.href}
-                class="mt-[1vh] w-full md:w-[18vw] max-w-[240px] h-[7vh] max-h-[55px] border-none rounded-[1.25em] text-white bg-[#065903] cursor-pointer text-[1.1rem] hover:bg-[#FFA726] transition-colors duration-200 flex justify-center items-center"
+                class="mt-[1vh] w-[30vw] md:w-[18vw] max-w-[240px] h-[7vh] max-h-[55px] border-none rounded-[1.25em] text-white bg-[#065903] cursor-pointer text-[1.1rem] hover:bg-[#FFA726] transition-colors duration-200 flex justify-center items-center"
             >
                 {img.text}
             </a>

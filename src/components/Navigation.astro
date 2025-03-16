@@ -7,31 +7,42 @@ const links = [
   { href: "/clasificaciones", text: "CLASIFICACIONES" },
   { href: "/arbitrospage", text: "ARBITROS" },
   { href: "/ganadores", text: "GANADORES" },
-  {href: "/login"}
+  { href: "/login" },
 ];
 
-// Obtener la ruta actual
 const currentPath = new URL(Astro.request.url).pathname;
-// Definir las rutas donde NO se debe mostrar el Rectangulo
+
 const excludedPaths = ["/", "/index", "/arbitrospage"];
 
-// Verificar si la ruta actual está en el array de rutas excluidas
 const shouldHideRectangulo = excludedPaths.includes(currentPath);
 ---
 
-<!-- Mostrar Rectangulo solo si no estamos en una de las rutas excluidas -->
-{!shouldHideRectangulo && <Rectangulo />}
-<header class="font-bold w-full h-[12vh] absolute z-20 flex justify-between items-center px-4 md:px-5 ">
-
-  <div class="block md:hidden">
-    <button id="menu-toggle" class="text-white focus:outline-none">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+<!-- Mostrar Rectangulo solo si no estamos en una de las rutas excluidas -->{
+  !shouldHideRectangulo && <Rectangulo />
+}
+<header
+  class="font-bold w-full h-[12vh] absolute z-20 flex justify-between items-center px-4 md:px-5"
+>
+  <a href="/" class="md:hidden text-white font-bold text-[1.7rem]"><span class="text-yellow-500">KIDS</span>LEAGUE</a>
+  <div class="block md:hidden absolute right-2">
+    <button id="menu-toggle" class="text-yellow-500 focus:outline-none">
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-10 w-10"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M4 6h16M4 12h16M4 18h16"></path>
       </svg>
     </button>
   </div>
-  
-  <nav  class="hidden md:block flex-1">
+
+  <nav class="hidden md:block flex-1">
     <ul class="flex items-center">
       {
         links.map((link) => (
@@ -40,8 +51,8 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
               href={link.href}
               class={`no-underline mr-[1.2vw] text-[0.9rem] transition-all duration-200 ${
                 currentPath === link.href
-                  ? "text-yellow-400 text-base" // Estilo para la página actual
-                  : "text-white hover:text-yellow-400 hover:text-base" // Estilo normal y hover
+                  ? "text-yellow-400 text-base"
+                  : "text-white hover:text-yellow-400 hover:text-base"
               }`}
             >
               {link.text}
@@ -57,15 +68,28 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
       </button>
     </ul>
   </nav>
-  
+
   <!-- Mobile menu (hidden by default) -->
-  <div id="mobile-menu" class="fixed inset-0 bg-black bg-opacity-90 z-50 hidden flex-col justify-center items-center">
+  <div
+    id="mobile-menu"
+    class="fixed inset-0 bg-green-700 z-50 hidden flex-col justify-center items-center"
+  >
     <button id="close-menu" class="absolute top-4 right-4 text-white">
-      <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+      <svg
+        xmlns="http://www.w3.org/2000/svg"
+        class="h-6 w-6"
+        fill="none"
+        viewBox="0 0 24 24"
+        stroke="currentColor"
+      >
+        <path
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          stroke-width="2"
+          d="M6 18L18 6M6 6l12 12"></path>
       </svg>
     </button>
-    
+
     <ul class="flex flex-col items-center space-y-6">
       {
         links.map((link) => (
@@ -74,8 +98,8 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
               href={link.href}
               class={`no-underline text-xl transition-all duration-200 ${
                 currentPath === link.href
-                  ? "text-yellow-400" // Estilo para la página actual
-                  : "text-white hover:text-yellow-400" // Estilo normal y hover
+                  ? "text-yellow-400"
+                  : "text-white hover:text-yellow-400"
               }`}
             >
               {link.text}
@@ -86,7 +110,7 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
       <li class="mt-8">
         <button
           class="bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold hover:bg-orange-600 transition-colors duration-200"
-          onclick="location.href='login.astro'"
+          onclick="location.href='login'"
         >
           INGRESAR
         </button>
@@ -96,22 +120,21 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
 </header>
 
 <script>
-  // Client-side JavaScript for mobile menu toggle
-  document.addEventListener('DOMContentLoaded', () => {
-    const menuToggle = document.getElementById('menu-toggle');
-    const closeMenu = document.getElementById('close-menu');
-    const mobileMenu = document.getElementById('mobile-menu');
-    
-    menuToggle?.addEventListener('click', () => {
-      mobileMenu?.classList.remove('hidden');
-      mobileMenu?.classList.add('flex');
-      document.body.style.overflow = 'hidden';
+  document.addEventListener("DOMContentLoaded", () => {
+    const menuToggle = document.getElementById("menu-toggle");
+    const closeMenu = document.getElementById("close-menu");
+    const mobileMenu = document.getElementById("mobile-menu");
+
+    menuToggle?.addEventListener("click", () => {
+      mobileMenu?.classList.remove("hidden");
+      mobileMenu?.classList.add("flex");
+      document.body.style.overflow = "hidden";
     });
-    
-    closeMenu?.addEventListener('click', () => {
-      mobileMenu?.classList.add('hidden');
-      mobileMenu?.classList.remove('flex');
-      document.body.style.overflow = '';
+
+    closeMenu?.addEventListener("click", () => {
+      mobileMenu?.classList.add("hidden");
+      mobileMenu?.classList.remove("flex");
+      document.body.style.overflow = "";
     });
   });
 </script>

@@ -7,59 +7,58 @@ import Arbitros from "../../components/arbitrosResources/Arbitros.astro";
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title="Arbitro Ingreso - KIDSLEAGUE"/>
-    <div class="flex justify-end pt-10 mx-10">
-        <button
-            onclick="location.href='../registro'"
-            class="flex justify-center  w-[12.5vw] h-[5vh] cursor-pointer text-white pointer size-[1rem] bg-[#F27405] border-2 border-white rounded-lg transition-all duration-300 hover:bg-[#FF8C42] hover:shadow-lg"
-        >
-            Volver
-        </button>
-    </div>
-    <Arbitros />
-</Layout>
+<Layout title="Arbitro Ingreso - KIDSLEAGUE" />
+<div class="flex justify-end pt-10 mx-10">
+  <button
+    onclick="location.href='../ingreso'"
+    class="flex justify-center w-[12.5vw] h-[5vh] cursor-pointer text-white pointer size-[1rem] bg-[#F27405] border-2 border-white rounded-lg transition-all duration-300 hover:bg-[#FF8C42] hover:shadow-lg"
+  >
+    Volver
+  </button>
+</div>
+<Arbitros />
 
 <style>
-    body {
-        background: url("/Images/FondoCancha.png");
-        font-family: "Poppins", sans-serif;
-        background-attachment: fixed;
-        background-size: cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        justify-content: center;
-        margin: 0;
-        padding: 0;
-    }
+  body {
+    background: url("/Images/FondoCancha.png");
+    font-family: "Poppins", sans-serif;
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+  }
 
-    /* Animación de entrada */
+  /* Animación de entrada */
+  main {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  /* Mejora para dispositivos con preferencia de movimiento reducido */
+  @media (prefers-reduced-motion: reduce) {
     main {
-        animation: fadeIn 0.6s ease-out;
+      animation: none;
     }
 
-    @keyframes fadeIn {
-        from {
-            opacity: 0;
-            transform: translateY(20px);
-        }
-        to {
-            opacity: 1;
-            transform: translateY(0);
-        }
+    .group:hover {
+      transform: none !important;
     }
 
-    /* Mejora para dispositivos con preferencia de movimiento reducido */
-    @media (prefers-reduced-motion: reduce) {
-        main {
-            animation: none;
-        }
-
-        .group:hover {
-            transform: none !important;
-        }
-
-        a:hover {
-            transform: none !important;
-        }
+    a:hover {
+      transform: none !important;
     }
+  }
 </style>

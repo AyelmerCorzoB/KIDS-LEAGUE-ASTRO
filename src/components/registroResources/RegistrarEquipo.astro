@@ -1,0 +1,137 @@
+<header>
+  <div class="absolute top-5 left-5">
+    <img src="/Images/Logo.png" alt="Logo Kids League" class="w-32" />
+  </div>
+</header>
+
+<div class="min-h-screen flex items-center justify-center">
+  <!-- Formulario de Equipo -->
+  <div
+    class="bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6"
+    id="formEquipo"
+  >
+    <h2 class="text-2xl font-bold text-center text-white">
+      REGISTRO DE <span class="text-[#FFD600]">EQUIPOS</span>
+    </h2>
+
+    <form class="w-80 space-y-4">
+      <div class="mb-15">
+        <label for="nombre" class="block text-sm font-medium text-white mb-1"
+          >Nombre del equipo</label
+        >
+        <input
+          type="text"
+          id="nombre"
+          placeholder="Ej: Pal Norte"
+          required
+          class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+
+      <div>
+        <label for="apellido" class="block text-sm font-medium text-white mb-1"
+          >Categoria</label
+        >
+        <select class="bg-white p-2 mb-4 w-full">
+          <option class="text-white" value="" disabled selected
+            >Seleccione una categoría</option
+          >
+          <option value="text-black">Sub-10</option>
+          <option value="text-black">Sub-12</option>
+          <option value="text-black">Sub-14</option>
+          <option value="text-black">Sub-16</option>
+          <option value="text-black">Sub-18</option>
+        </select>
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button
+          type="button"
+          onclick="location.href='/sesiones/sesion-directivo'"
+          class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          VOLVER
+        </button>
+        <button
+          type="button"
+          id="mostrarFormEntrenador"
+          class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          SIGUIENTE
+        </button>
+      </div>
+    </form>
+  </div>
+
+  <!-- Formulario de Entrenador -->
+  <div
+    class="bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6 hidden"
+    id="formEntrenador"
+  >
+    <h2 class="text-2xl font-bold text-center text-white">
+      DATOS DEL <span class="text-[#FFD600]">ENTRENADOR</span>
+    </h2>
+
+    <form class="space-y-4">
+      <div>
+        <label
+          for="nombreEntrenador"
+          class="block text-sm font-medium text-white mb-1">Nombre</label
+        >
+        <input
+          type="text"
+          id="nombreEntrenador"
+          placeholder="Nombre"
+          required
+          class="bg-white p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+
+      <div>
+        <label
+          for="TelefonoEntrenador"
+          class="block text-sm font-medium text-white mb-1">Telefono</label
+        >
+        <input
+          type="text"
+          id="TelefonoEntrenador"
+          placeholder="Telefono"
+          required
+          class="bg-white p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+
+      <div>
+        <label
+          for="telefonoEntrenador"
+          class="block text-sm font-medium text-white mb-1">Email</label
+        >
+        <input
+          type="tel"
+          id="telefonoEntrenador"
+          placeholder="Email"
+          required
+          class="bg-white p-2 w-full border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+        />
+      </div>
+
+      <div class="flex justify-between mt-6">
+        <button
+          type="button"
+          class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+          onclick="location.href='/sesiones/sesion-directivo'"
+          >
+          VOLVER
+        </button>
+        <button
+          id="registrarEquipo"
+          class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
+        >
+          REGISTRAR
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<script src="../../scripts/registro_equipo.js"></script>

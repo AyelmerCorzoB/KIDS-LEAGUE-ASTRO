@@ -1,22 +1,66 @@
-<footer class="avsolute bottom-0 sticky flex justify-between items-center px-5 mt-10 z-2000">
-    <!-- Logo -->
-    <img class="w-[6.25rem] hover:opacity-80 transition-opacity duration-300" src="/Images/Logo.png" alt="Logo Kids League">
+---
+// You can add any Astro-specific logic here if needed
+---
 
-    <!-- Redes Sociales -->
-    <div class="bg-[#139e15] py-2 px-4 rounded-[0.625rem] flex gap-[0.938rem]">
+<footer class="w-full py-4 px-4 sm:px-6 shadow-sm">
+    <div class="container mx-auto flex flex-row items-center justify-between gap-4">
+      <!-- Logo -->
+      <a href="/" class="transform transition-transform duration-300 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md">
+        <img 
+          class="w-20 sm:w-[6.25rem]" 
+          src="/Images/Logo.png" 
+          alt="Kids League Logo"
+          width="100"
+          height="40"
+        >
+      </a>
+  
+      <!-- Redes Sociales -->
+      <div class="bg-[#139e15] py-2 px-4 rounded-[0.625rem] flex items-center gap-3 sm:gap-[0.938rem] shadow-md hover:shadow-lg transition-shadow duration-300">
         <!-- WhatsApp -->
-        <a href="#" class="inline-block transform transition-transform duration-300 hover:scale-110">
-            <img src="/Images/whatsapp.png" alt="WhatsApp" class="filter brightness-0 invert hover:brightness-100 hover:invert-0 hover:sepia hover:brightness-90 hover:hue-rotate-[30deg] transition-all duration-300">
+        <a 
+          href="#" 
+          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Contact us on WhatsApp"
+        >
+          <img 
+            src="/Images/whatsapp.png" 
+            alt="" 
+            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+            width="24"
+            height="24"
+          >
         </a>
-
+  
         <!-- Facebook -->
-        <a href="#" class="inline-block transform transition-transform duration-300 hover:scale-110">
-            <img src="/Images/facebook.png" alt="Facebook" class="filter brightness-0 invert hover:brightness-100 hover:invert-0 hover:sepia hover:brightness-90 hover:hue-rotate-[30deg] transition-all duration-300">
+        <a 
+          href="#" 
+          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Follow us on Facebook"
+        >
+          <img 
+            src="/Images/facebook.png" 
+            alt="" 
+            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+            width="24"
+            height="24"
+          >
         </a>
-
+  
         <!-- TikTok -->
-        <a href="#" class="inline-block transform transition-transform duration-300 hover:scale-110">
-            <img src="/Images/tiktok.png" alt="TikTok" class="filter brightness-0 invert hover:brightness-100 hover:invert-0 hover:sepia hover:brightness-90 hover:hue-rotate-[30deg] transition-all duration-300">
+        <a 
+          href="#" 
+          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+          aria-label="Follow us on TikTok"
+        >
+          <img 
+            src="/Images/tiktok.png" 
+            alt="" 
+            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+            width="24"
+            height="24"
+          >
         </a>
+      </div>
     </div>
-</footer>
+  </footer>

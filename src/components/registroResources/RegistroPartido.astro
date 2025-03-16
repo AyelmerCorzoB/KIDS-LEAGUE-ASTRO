@@ -1,6 +1,8 @@
 <header>
     <div class="absolute top-5 left-5 hidden md:block">
-      <img src="/Images/Logo.png" alt="Logo Kids League" class="w-32">
+      <a href="/registro">
+        <img src="/Images/Logo.png" alt="Logo Kids League" class="w-32">
+      </a>
     </div>
   </header>
   
@@ -8,7 +10,7 @@
     <div class="overflow-y-auto bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6">
       <!-- Paso 1: Formulario de registro -->
       <div id="paso1" class="space-y-6">
-        <h1 class="text-2xl font-bold text-center text-white">Registro de Partido</h1>
+        <h1 class="text-2xl font-bold text-center text-white">REGISTRO DE <span class="text-yellow-300">PARTIDO</span></h1>
   
         <form id="formularioPartido" class="space-y-4">
           <div class="grid grid-cols-2 gap-4">
@@ -19,7 +21,7 @@
                 id="fechaPartido"
                 name="fechaPartido"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg text-white focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg text-gray-700 focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
@@ -30,7 +32,7 @@
                 name="marcador"
                 placeholder="1 - 1"
                 required
-                class="w-full px-3 text-white py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="bg-white w-full px-3 text-gray-700 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
           </div>
@@ -42,8 +44,9 @@
                 type="text"
                 id="equipoLocal"
                 name="equipoLocal"
+                placeholder="Ej: Pal Norte"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="bg-white w-full px-3 gray-700 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
             <div>
@@ -52,8 +55,9 @@
                 type="text"
                 id="equipoVisitante"
                 name="equipoVisitante"
+                placeholder="Ej: Campo Dos"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+                class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
               />
             </div>
           </div>
@@ -65,9 +69,10 @@
                 type="number"
                 id="tarjetasAmarillas"
                 name="tarjetasAmarillas"
+                placeholder="Ej: 2"
                 min="0"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
+                class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-yellow-500"
               />
             </div>
             <div>
@@ -77,8 +82,9 @@
                 id="tarjetasRojas"
                 name="tarjetasRojas"
                 min="0"
+                placeholder="Ej: 2"
                 required
-                class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
+                class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-500"
               />
             </div>
           </div>
@@ -89,8 +95,9 @@
               id="observacionArbitro"
               name="observacionArbitro"
               required
-              rows="3"
-              class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
+              placeholder="Ej: Jugadores agresivos"
+              rows="1"
+              class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
             ></textarea>
           </div>
   
@@ -98,7 +105,7 @@
   
           <div class="flex justify-between mt-6">
             <button
-            onclick="location.href='../registro'"
+            onclick="location.href='../ingreso'"
               type="button"
               id="volverBtn"
               class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"

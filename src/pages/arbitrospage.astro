@@ -1,23 +1,24 @@
 ---
-import Navigation from '../components/Navigation.astro';
+import Navigation from "../components/Navigation.astro";
 import "../styles/global.css";
-import Layout from '../layouts/Layout.astro';
-import Arbitros from '../components/arbitrosResources/Arbitros.astro';
+import Layout from "../layouts/Layout.astro";
+import Arbitros from "../components/arbitrosResources/Arbitros.astro";
 
 // Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
 // Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
 ---
 
-<Layout title='Arbitros - KIDSLEAGUE'>
-	<Navigation />
-	<Arbitros />
+<Layout title="Arbitros - KIDSLEAGUE">
+  <Navigation />
+  <Arbitros />
 </Layout>
 
 <style>
-    html,body {
-        display: block; 
-    background: url('/Images/BACKGROUND.svg');
-    font-family: 'Poppins', sans-serif;
+  html,
+  body {
+    display: block;
+    background: url("/Images/BACKGROUND.svg");
+    font-family: "Poppins", sans-serif;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
@@ -25,5 +26,5 @@ import Arbitros from '../components/arbitrosResources/Arbitros.astro';
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    }
+  }
 </style>
