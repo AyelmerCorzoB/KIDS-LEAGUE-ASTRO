@@ -22,13 +22,13 @@ document.addEventListener("DOMContentLoaded", () => {
     "Jhorman Castellanos":
       "Backend Developer.",
     "Nilson Carvajal":
-      "Backend Developer especializado en seguridad y optimización de bases de datos.",
+      "Backend Developer",
     "Stivenson Correa":
-      "Backend Developer con enfoque en escalabilidad y rendimiento de aplicaciones.",
+      "Backend Developer con enfoque en escalabilidad y rendimiento de aplicaciones web.",
     "Erick Arias":
-      "Frontend Developer con experiencia en frameworks modernos y animaciones web.",
+      "Frontend Developer",
     "Jeisson Perez":
-      "Frontend Developer especializado en interfaces interactivas y experiencia de usuario.",
+      "Frontend Developer",
   };
 
   // Open modal when clicking on a team card
