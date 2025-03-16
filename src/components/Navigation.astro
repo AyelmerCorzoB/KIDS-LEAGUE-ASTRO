@@ -1,6 +1,5 @@
 ---
 import Rectangulo from "./bloques/Rectangulo.astro";
-
 const links = [
   { href: "/", text: "INICIO" },
   { href: "/about", text: "SOBRE NOSOTROS" },
@@ -13,9 +12,17 @@ const links = [
 
 // Obtener la ruta actual
 const currentPath = new URL(Astro.request.url).pathname;
+// Definir las rutas donde NO se debe mostrar el Rectangulo
+const excludedPaths = ["/", "/index", "/arbitrospage"];
+
+// Verificar si la ruta actual está en el array de rutas excluidas
+const shouldHideRectangulo = excludedPaths.includes(currentPath);
 ---
-<Rectangulo />
-<header class="w-full h-15 absolute z-20 flex justify-between items-center px-4 md:px-5 mt-1">
+
+<!-- Mostrar Rectangulo solo si no estamos en una de las rutas excluidas -->
+{!shouldHideRectangulo && <Rectangulo />}
+<header class="font-bold w-full h-[12vh] absolute z-20 flex justify-between items-center px-4 md:px-5 ">
+
   <div class="block md:hidden">
     <button id="menu-toggle" class="text-white focus:outline-none">
       <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -24,7 +31,7 @@ const currentPath = new URL(Astro.request.url).pathname;
     </button>
   </div>
   
-  <nav class="hidden md:block flex-1">
+  <nav  class="hidden md:block flex-1">
     <ul class="flex items-center">
       {
         links.map((link) => (

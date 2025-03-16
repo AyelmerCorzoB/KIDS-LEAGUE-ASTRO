@@ -1,5 +1,4 @@
 ---
-import Navigation from "../../components/Navigation.astro";
 import { imgs } from "../../data/arbitros";
 import Layout from "../../layouts/Layout.astro";
 import "../../styles/global.css";
@@ -11,11 +10,10 @@ export async function getStaticPaths() {
 }
 
 const { arbitroId } = Astro.params;
-
 const arbitro = imgs.find((arb) => arb.href === `/arbitros/${arbitroId}`);
 ---
 
-<Layout title={arbitro ? `Árbitro: ${arbitro.text}` : "Árbitro no encontrado"} class="min-h-screen">
+<Layout title={arbitro ? `Árbitro: ${arbitro.text}` : "Árbitro no encontrado"}>
 
   <main class="flex flex-col justify-center items-center container mx-auto px-4 pt-[15vh] md:pt-[20vh] max-w-6xl">
     {
@@ -26,6 +24,7 @@ const arbitro = imgs.find((arb) => arb.href === `/arbitros/${arbitroId}`);
     <div class="w-40 md:w-60 bg-gradient-to-br from-[#FF4E12] to-[#F27405] p-1 rounded-xl shadow-xl">
       <div class="bg-black/20 p-2 rounded-lg">
         <img
+          
           src={arbitro.src || "/placeholder.svg"}
           alt={`Árbitro: ${arbitro.text}`}
           class="w-full h-auto object-cover rounded-lg shadow-inner transition-transform duration-300 hover:scale-[1.02]"
