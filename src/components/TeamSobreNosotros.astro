@@ -1,70 +1,231 @@
-<section class="py-[50px] px-[20px] text-center mt-[5%]">
-    <!-- Título -->
-    <h2 class="text-[28px] text-white font-bold mb-[30px]">Equipo de Desarrollo</h2>
+---
+// Team member data for easier maintenance
+const teamMembers = [
+  {
+    name: "Stiven Carvajal",
+    role: "Scrum",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQG_X-VjpsV3cg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703866483850?e=1747267200&v=beta&t=sBsCi3ZpuyZH0tGrFW8bFO3bKpJq1EmHI4LtW7VWcK0",
+    featured: true,
+    github: "https://github.com/StivenCarvajalCampus",
+    linkedin: "https://www.linkedin.com/in/stiven-carvajal-5762221a7/"
+  },
+  {
+    name: "Ayelmer Corzo",
+    role: "Backend",
+    image: "https://media.licdn.com/dms/image/v2/D5603AQEOR_Nbe-J3YQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706660512351?e=1747267200&v=beta&t=aQz1FHjsu1rG7Rm4T8F_I-0m5SoDpgZnIE0l9JNA0Mk",
+    featured: true,
+    github: "https://github.com/ayelmercorzo",
+    linkedin: "https://www.linkedin.com/in/ayelmercorzob/"
+  },
+  {
+    name: "Karen Cristancho",
+    role: "Frontend",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFLV4-ExqQ_rA/profile-displayphoto-shrink_200_200/B4DZWLrenyG8Ak-/0/1741805186845?e=1747267200&v=beta&t=Dy1MQaD8_2h_Zk0MiLGQAdgSORt3k5XNjGcwlRXPIUs",
+    featured: false,
+    github: "https://github.com/KarenLore",
+    linkedin: "https://www.linkedin.com/in/karencristancho/"
+  },
+  {
+    name: "Elidallana Cristancho",
+    role: "Frontend",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQG14Erz2483vQ/profile-displayphoto-shrink_800_800/B4EZVnKd22HUAc-/0/1741192552226?e=1747267200&v=beta&t=ArtyOrGq-1lfNgaJdgHhEXmINpx2RCLAqD-LjofH60w",
+    featured: false,
+    github: "https://github.com/Elidallanacristanchocaceres",
+    linkedin: "https://www.linkedin.com/in/elidallanacristancho/"
+  },
+  {
+    name: "Jhorman Castellanos",
+    role: "Backend",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQHP1thu89JEPg/profile-displayphoto-shrink_800_800/B4EZVIsuF_G0Ac-/0/1740681437948?e=1747267200&v=beta&t=HukKa4k-u17sjurjpEgxtTSjPeOSetHI092Krt14J8s",
+    featured: true,
+    github: "https://github.com/Jhormancastella",
+    linkedin: "https://www.linkedin.com/in/jhorman-jesus-castellanos-morales-245b97261/"
+  },
+  {
+    name: "Nilson Carvajal",
+    role: "Backend",
+    image: "/Images/nilson.jpeg",
+    featured: true,
+  },
+  {
+    name: "Stivenson Correa",
+    role: "Backend",
+    image: "https://media.licdn.com/dms/image/v2/D4D35AQHaYLz-CNyqxQ/profile-framedphoto-shrink_800_800/B4DZVdKs6JG4Ao-/0/1741024841744?e=1742403600&v=beta&t=1adM-mRUGGt16nRu4NEE-gP1l1wmqj2wdjOvuLNP0Ng",
+    featured: true,
+    github: "https://github.com/Stivenco12",
+    linkedin: "https://www.linkedin.com/in/jedier-stivenson-correa-amariz-628597353/"
+  },
+  {
+    name: "Erick Arias",
+    role: "Frontend",
+    image: "https://media.licdn.com/dms/image/v2/D4E03AQGBEAH2Y4i6Gg/profile-displayphoto-shrink_800_800/B4EZWLYzWTHUAg-/0/1741800290201?e=1747267200&v=beta&t=5UHTvz2usr5SXZPk1nuhstcUy03uSH7EI7MOdAK8iLc",
+    featured: true,
+    github: "https://github.com/ErickJarias",
+    linkedin: "https://www.linkedin.com/in/erick-arias-19728226a/"
+  },
+  {
+    name: "Jeisson Perez",
+    role: "Frontend",
+    image: "https://media.licdn.com/dms/image/v2/D4D03AQFBHST_uLavzg/profile-displayphoto-shrink_800_800/B4DZVIoKzEHIAc-/0/1740680246293?e=1747267200&v=beta&t=rjFWdO0W6giZGOV59ROl8L_B6zzZ3i2ODMGQmrim9ZQ",
+    featured: true,
+    github: "https://github.com/stivenpe",
+    linkedin: "https://www.linkedin.com/in/jeisson-stiven-perez-gonzalez-8b1b66316/"
+  }
+];
+---
 
-    <!-- Miembros del equipo -->
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4 max-w-[1200px] mx-auto justify-items-center">
-        <!-- Stiven Carvajal -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D4E03AQG_X-VjpsV3cg/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1703866483850?e=1747267200&v=beta&t=sBsCi3ZpuyZH0tGrFW8bFO3bKpJq1EmHI4LtW7VWcK0" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Stiven Carvajal</h3>
-            <p class="text-[14px] text-white/80">Scrum</p>
-        </div>
-
-        <!-- Ayelmer Corzo -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D5603AQEOR_Nbe-J3YQ/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1706660512351?e=1747267200&v=beta&t=aQz1FHjsu1rG7Rm4T8F_I-0m5SoDpgZnIE0l9JNA0Mk" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Ayelmer Corzo</h3>
-            <p class="text-[14px] text-white/80">Backend</p>
-        </div>
-
-        <!-- Jhorman Castellanos -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D4E03AQHP1thu89JEPg/profile-displayphoto-shrink_800_800/B4EZVIsuF_G0Ac-/0/1740681437948?e=1747267200&v=beta&t=HukKa4k-u17sjurjpEgxtTSjPeOSetHI092Krt14J8s" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Jhorman Castellanos</h3>
-            <p class="text-[14px] text-white/80">Backend</p>
-        </div>
-
-        <!-- Nilson Carvajal -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="/Images/nilson.jpeg" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Nilson Carvajal</h3>
-            <p class="text-[14px] text-white/80">Backend</p>
-        </div>
-
-        <!-- Stivenson Correa -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D4D35AQHaYLz-CNyqxQ/profile-framedphoto-shrink_800_800/B4DZVdKs6JG4Ao-/0/1741024841744?e=1742403600&v=beta&t=1adM-mRUGGt16nRu4NEE-gP1l1wmqj2wdjOvuLNP0Ng" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Stivenson Correa</h3>
-            <p class="text-[14px] text-white/80">Backend</p>
-        </div>
-
-        <!-- Erick Arias -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D4E03AQGBEAH2Y4i6Gg/profile-displayphoto-shrink_800_800/B4EZWLYzWTHUAg-/0/1741800290201?e=1747267200&v=beta&t=5UHTvz2usr5SXZPk1nuhstcUy03uSH7EI7MOdAK8iLc" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Erick Arias</h3>
-            <p class="text-[14px] text-white/80">Frontend</p>
-        </div>
-
-        <!-- Jeisson Perez -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FF4E12]">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFBHST_uLavzg/profile-displayphoto-shrink_800_800/B4DZVIoKzEHIAc-/0/1740680246293?e=1747267200&v=beta&t=rjFWdO0W6giZGOV59ROl8L_B6zzZ3i2ODMGQmrim9ZQ" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Jeisson Perez</h3>
-            <p class="text-[14px] text-white/80">Frontend</p>
-        </div>
-
-        <!-- Karen Cristancho -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FFD60A]">
-            <img src="https://media.licdn.com/dms/image/v2/D4D03AQFLV4-ExqQ_rA/profile-displayphoto-shrink_200_200/B4DZWLrenyG8Ak-/0/1741805186845?e=1747267200&v=beta&t=Dy1MQaD8_2h_Zk0MiLGQAdgSORt3k5XNjGcwlRXPIUs" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Karen Cristancho</h3>
-            <p class="text-[14px] text-white/80">Frontend</p>
-        </div>
-
-        <!-- Dayana Cristancho -->
-        <div class="bg-black/50 items-center justify-items-center  rounded-[0.625rem] w-[90%] p-5 text-center transition-transform duration-300 hover:scale-105 hover:shadow-lg text-white border-3 border-[#FFD60A]">
-            <img src="https://media.licdn.com/dms/image/v2/D4E03AQG14Erz2483vQ/profile-displayphoto-shrink_800_800/B4EZVnKd22HUAc-/0/1741192552226?e=1747267200&v=beta&t=ArtyOrGq-1lfNgaJdgHhEXmINpx2RCLAqD-LjofH60w" alt="Miembro del Equipo" class="w-[100px] h-[100px] rounded-full mb-[15px] object-cover shadow-md border-2 border-[#FF4E12]">
-            <h3 class="text-[1.125rem] my-[0.625rem] text-[#FFD60A]">Elidallana Cristancho</h3>
-            <p class="text-[14px] text-white/80">Frontend</p>
-        </div>
+<section class="py-8 px-4 sm:px-6 md:pt-12 overflow-hidden relative">
+  <!-- Background gradient for visual interest -->
+  <div class="absolute inset-0 bg-gradient-to-b from-transparent to-black/20 pointer-events-none"></div>
+  
+  <div class="max-w-6xl mx-auto">
+    <!-- Section header with animated underline -->
+    <div class="text-center mb-8 relative">
+      <h2 class="text-2xl sm:text-3xl md:text-4xl text-white font-bold mb-3 inline-block">
+        Equipo de Desarrollo
+      </h2>
+      <div class="h-1 w-20 bg-[#FF4E12] mx-auto rounded-full"></div>
     </div>
+
+    <!-- Team grid with improved responsive layout for smaller cards -->
+    <div class="grid grid-cols-2 xs:grid-cols-3 sm:grid-cols-4 md:grid-cols-5 lg:grid-cols-6 gap-3 sm:gap-4">
+      {teamMembers.map((member) => (
+        <div class={`team-card bg-black/50 rounded-lg p-2 text-center transition-all duration-300 
+          ${member.featured ? 'border-[#FF4E12]' : 'border-[#FFD60A]'} border-[1.5px] 
+          hover:scale-105 hover:shadow-[0_0_10px_rgba(255,78,18,0.5)] group`}>
+          
+          <!-- Image container with animated border -->
+          <div class="relative mx-auto mb-2 w-14 h-14 sm:w-16 sm:h-16">
+            <div class="absolute inset-0 rounded-full bg-gradient-to-r from-[#FF4E12] to-[#FFD60A] animate-spin-slow opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+            <img 
+              src={member.image || "/placeholder.svg"} 
+              alt={`Foto de ${member.name}`} 
+              class="rounded-full object-cover w-full h-full border-[1.5px] border-[#FF4E12] relative z-10"
+              loading="lazy"
+            />
+          </div>
+          
+          <!-- Member info with hover effects -->
+          <h3 class="text-sm font-bold mb-0.5 text-[#FFD60A] group-hover:text-white transition-colors duration-300 line-clamp-1">
+            {member.name}
+          </h3>
+          <p class="text-xs text-white/80 group-hover:text-white transition-colors duration-300 mb-1">
+            {member.role}
+          </p>
+          
+          <!-- Social links that appear on hover -->
+          <div class="flex justify-center space-x-2 scale-0 group-hover:scale-100 transition-transform duration-300 origin-center">
+            {member.linkedin && (
+              <a 
+                href={member.linkedin} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-white/70 hover:text-[#FFD60A] transition-colors duration-200" 
+                aria-label={`LinkedIn de ${member.name}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+                </svg>
+              </a>
+            )}
+            {member.github && (
+              <a 
+                href={member.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                class="text-white/70 hover:text-[#FFD60A] transition-colors duration-200" 
+                aria-label={`GitHub de ${member.name}`}
+              >
+                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" fill="currentColor" viewBox="0 0 16 16">
+                  <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+                </svg>
+              </a>
+            )}
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
 </section>
+
+<!-- Modal for expanded view (optional) -->
+<div id="team-modal" class="fixed inset-0 bg-black/80 z-50 hidden items-center justify-center p-4">
+  <div class="bg-[#1a1a1a] rounded-xl max-w-md w-full p-6 relative border-2 border-[#FF4E12]">
+    <button id="close-modal" class="absolute top-3 right-3 text-white/70 hover:text-white">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+      </svg>
+    </button>
+    <div class="flex flex-col items-center">
+      <div class="w-24 h-24 rounded-full overflow-hidden border-2 border-[#FF4E12] mb-4">
+        <img id="modal-image" src="/placeholder.svg" alt="Team member" class="w-full h-full object-cover">
+      </div>
+      <h3 id="modal-name" class="text-xl font-bold text-[#FFD60A] mb-1"></h3>
+      <p id="modal-role" class="text-white/80 mb-4"></p>
+      <div class="flex space-x-4 mb-6">
+        <a id="modal-linkedin" href="#" target="_blank" class="text-white bg-[#0077B5] px-3 py-1.5 rounded-md text-sm flex items-center gap-2 hover:bg-[#0077B5]/80 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"/>
+          </svg>
+          LinkedIn
+        </a>
+        <a id="modal-github" href="#" target="_blank" class="text-white bg-[#333] px-3 py-1.5 rounded-md text-sm flex items-center gap-2 hover:bg-[#333]/80 transition-colors">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" viewBox="0 0 16 16">
+            <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.012 8.012 0 0 0 16 8c0-4.42-3.58-8-8-8z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+      <p id="modal-bio" class="text-white/90 text-center text-sm"></p>
+    </div>
+  </div>
+</div>
+
+<style>
+  /* Custom animation for the image border */
+  @keyframes spin-slow {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .animate-spin-slow {
+    animation: spin-slow 8s linear infinite;
+  }
+  
+  /* Custom breakpoint for extra small devices */
+  @media (min-width: 475px) {
+    .xs\:grid-cols-3 {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+  }
+  
+  /* Improve card appearance on very small screens */
+  @media (max-width: 340px) {
+    .team-card {
+      padding: 0.5rem;
+    }
+  }
+  
+  /* Smooth scrolling for the entire page */
+  html {
+    scroll-behavior: smooth;
+  }
+  
+  /* Improve card hover effect */
+  .team-card {
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    will-change: transform;
+  }
+  
+  /* Line clamp for text truncation */
+  .line-clamp-1 {
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+</style>
+
+<script src="/src/scripts/team.js"></script>
+

@@ -1,5 +1,6 @@
 ---
 import Rectangulo from "./bloques/Rectangulo.astro";
+
 const links = [
   { href: "/", text: "INICIO" },
   { href: "/about", text: "SOBRE NOSOTROS" },
@@ -7,45 +8,47 @@ const links = [
   { href: "/clasificaciones", text: "CLASIFICACIONES" },
   { href: "/arbitrospage", text: "ARBITROS" },
   { href: "/ganadores", text: "GANADORES" },
-  { href: "/login" },
+  { href: "/login", text: "INGRESAR" },
 ];
 
 const currentPath = new URL(Astro.request.url).pathname;
-
 const excludedPaths = ["/", "/index", "/arbitrospage"];
-
 const shouldHideRectangulo = excludedPaths.includes(currentPath);
 ---
 
-<!-- Mostrar Rectangulo solo si no estamos en una de las rutas excluidas -->{
-  !shouldHideRectangulo && <Rectangulo />
-}
+{!shouldHideRectangulo && <Rectangulo />}
+
 <header
   class="font-bold w-full h-[12vh] absolute z-20 flex justify-between items-center px-4 md:px-5"
 >
-  <a href="/" class="md:hidden text-white font-bold text-[1.7rem]"><span class="text-yellow-500">KIDS</span>LEAGUE</a>
-  <div class="block md:hidden absolute right-2">
-    <button id="menu-toggle" class="text-yellow-500 focus:outline-none">
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-10"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          stroke-width="2"
-          d="M4 6h16M4 12h16M4 18h16"></path>
-      </svg>
-    </button>
-  </div>
+  <a href="/" class="md:hidden text-white font-bold text-[1.7rem]">
+    <span class="text-yellow-500">KIDS</span>LEAGUE
+  </a>
+
+  <button
+    id="menu-toggle"
+    class="block md:hidden absolute right-2 text-yellow-500 focus:outline-none z-30"
+    aria-label="Toggle menu"
+  >
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="h-10 w-10"
+      fill="none"
+      viewBox="0 0 24 24"
+      stroke="currentColor"
+    >
+      <path
+        stroke-linecap="round"
+        stroke-linejoin="round"
+        stroke-width="2"
+        d="M4 6h16M4 12h16M4 18h16"></path>
+    </svg>
+  </button>
 
   <nav class="hidden md:block flex-1">
     <ul class="flex items-center">
       {
-        links.map((link) => (
+        links.slice(0, -1).map((link) => (
           <li>
             <a
               href={link.href}
@@ -60,24 +63,28 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
           </li>
         ))
       }
-      <button
+      <a
+        href="/login"
         class="absolute right-10 bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
-        onclick="location.href='login'"
       >
         INGRESAR
-      </button>
+      </a>
     </ul>
   </nav>
 
-  <!-- Mobile menu (hidden by default) -->
+  <!-- Mobile menu -->
   <div
     id="mobile-menu"
     class="fixed inset-0 bg-green-700 z-50 hidden flex-col justify-center items-center"
   >
-    <button id="close-menu" class="absolute top-4 right-4 text-white">
+    <button
+      id="close-menu"
+      class="absolute top-4 right-4 text-white p-2"
+      aria-label="Close menu"
+    >
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6"
+        class="h-8 w-8"
         fill="none"
         viewBox="0 0 24 24"
         stroke="currentColor"
@@ -92,7 +99,7 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
 
     <ul class="flex flex-col items-center space-y-6">
       {
-        links.map((link) => (
+        links.slice(0, -1).map((link) => (
           <li>
             <a
               href={link.href}
@@ -108,33 +115,63 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
         ))
       }
       <li class="mt-8">
-        <button
+        <a
+          href="/login"
           class="bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold hover:bg-orange-600 transition-colors duration-200"
-          onclick="location.href='login'"
         >
           INGRESAR
-        </button>
+        </a>
       </li>
     </ul>
   </div>
 </header>
 
 <script>
-  document.addEventListener("DOMContentLoaded", () => {
+  function setupMobileMenu() {
     const menuToggle = document.getElementById("menu-toggle");
     const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
 
-    menuToggle?.addEventListener("click", () => {
-      mobileMenu?.classList.remove("hidden");
-      mobileMenu?.classList.add("flex");
+    if (!menuToggle || !closeMenu || !mobileMenu) {
+      console.error("Menu elements not found");
+      return;
+    }
+
+    const openMenu = () => {
+      mobileMenu.classList.remove("hidden");
+      mobileMenu.classList.add("flex");
       document.body.style.overflow = "hidden";
+    };
+
+    const closeMenuHandler = () => {
+      mobileMenu.classList.add("hidden");
+      mobileMenu.classList.remove("flex");
+      document.body.style.overflow = "";
+    };
+
+    menuToggle.addEventListener("click", openMenu);
+    menuToggle.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      openMenu();
     });
 
-    closeMenu?.addEventListener("click", () => {
-      mobileMenu?.classList.add("hidden");
-      mobileMenu?.classList.remove("flex");
-      document.body.style.overflow = "";
+    closeMenu.addEventListener("click", closeMenuHandler);
+    closeMenu.addEventListener("touchend", (e) => {
+      e.preventDefault();
+      closeMenuHandler();
     });
-  });
+
+    const menuLinks = mobileMenu.querySelectorAll("a");
+    menuLinks.forEach((link) => {
+      link.addEventListener("click", closeMenuHandler);
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", setupMobileMenu);
+  } else {
+    setupMobileMenu();
+  }
+
+  document.addEventListener("astro:page-load", setupMobileMenu);
 </script>
