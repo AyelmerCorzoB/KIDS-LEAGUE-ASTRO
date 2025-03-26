@@ -29,7 +29,9 @@ function RegistrarJugador() {
 
   if (nombreEntrenador && telefonoEntrenador && emailEntrenador) {
     alert("¡Registro completado correctamente!");
-    window.location.href = "/registro";
+    setTimeout(() => {
+    window.location.href = "/sesiones/sesion-directivo";
+    }, 5000);
   } else {
     alert("Por favor, complete todos los campos requeridos.");
   }

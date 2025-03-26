@@ -1,3 +1,7 @@
+---
+// Componente Astro para mostrar la clasificación de la liga
+---
+
 <section
   class="max-w-6xl mx-auto px-4 py-12 pt-30 space-y-16 text-white rounded-xl"
 >
@@ -7,187 +11,240 @@
     >
       CLASIFICACIÓN
     </h2>
-    <div class="rounded-lg overflow-hidden shadow-lg">
-      <table class="w-full border-collapse">
-        <thead>
-          <tr class=" font-bold bg-[#006600] text-white">
-            <td
-              colspan="8"
-              class="py-2 md:py-3 px-2 md:px-4 text-center font-bold border border-gray-600"
-              >Liga Tibuyana</td
-            >
-          </tr>
-          <tr class=" font-bold bg-[#004700] text-white">
-            <th
-              class="py-2 md:py-3 px-2 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >Equipo</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >PJ</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >PG</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >PE</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >PP</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >GF</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >GC</th
-            >
-            <th
-              class="py-2 md:py-3 px-1 md:px-4 font-bold border border-gray-600 text-xs md:text-base"
-              >PTS</th
-            >
+    <div class="overflow-x-auto">
+      <table class="rounded-lg overflow-hidden max-w-xl shadow-lg mx-auto">
+        <thead class="bg-[#006600]">
+          <tr>
+            <th class="py-2 px-4 border-b text-left">Posición</th>
+            <th class="py-2 px-4 border-b text-left">Equipo</th>
+            <th class="py-2 px-4 border-b text-center">PTS</th>
+            <th class="py-2 px-4 border-b text-center">PJ</th>
+            <th class="py-2 px-4 border-b text-center">V</th>
+            <th class="py-2 px-4 border-b text-center">E</th>
+            <th class="py-2 px-4 border-b text-center">P</th>
+            <th class="py-2 px-4 border-b text-center">TA</th>
+            <th class="py-2 px-4 border-b text-center">TR</th>
+            <th class="py-2 px-4 border-b text-center">Últ. Resultados</th>
           </tr>
         </thead>
         <tbody>
-          <tr class="hover:bg-gray-700 transition-colors">
-            <td
-              class="py-2 md:py-3 px-2 md:px-4 border border-gray-600 font-medium text-xs md:text-base"
-              >Grupo 1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >7</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >6</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >0</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >18</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >5</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center font-bold text-xs md:text-base"
-              >18</td
-            >
+          <!-- Fila 1: Palnorte A -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">1</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Palnorte A</td>
+            <td class="py-2 px-4 border-b text-center">15</td>
+            <td class="py-2 px-4 border-b text-center">5</td>
+            <td class="py-2 px-4 border-b text-center">5</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              </div>
+            </td>
           </tr>
-          <tr class=" font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
-            <td
-              class="py-2 md:py-3 px-2 md:px-4 border border-gray-600 font-medium text-xs md:text-base"
-              >Grupo 2</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >7</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >5</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >17</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >7</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center font-bold text-xs md:text-base"
-              >16</td
-            >
+          <!-- Fila 2: Alianza motilona F.c -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">2</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Alianza motilona F.c</td>
+            <td class="py-2 px-4 border-b text-center">12</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              </div>
+            </td>
           </tr>
-          <tr class="hover:bg-gray-700 transition-colors">
-            <td
-              class="py-2 md:py-3 px-2 md:px-4 border border-gray-600 font-medium text-xs md:text-base"
-              >Grupo 3</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >7</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >4</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >2</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >15</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >9</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center font-bold text-xs md:text-base"
-              >14</td
-            >
+          <!-- Fila 3: Tibu con futuro -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">3</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Tibu con futuro</td>
+            <td class="py-2 px-4 border-b text-center">12</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              </div>
+            </td>
           </tr>
-          <tr class=" font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
-            <td
-              class="py-2 md:py-3 px-2 md:px-4 border border-gray-600 font-medium text-xs md:text-base"
-              >Grupo 4</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >7</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >3</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >3</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >1</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >12</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center text-xs md:text-base"
-              >8</td
-            >
-            <td
-              class="py-2 md:py-3 px-1 md:px-4 border border-gray-600 text-center font-bold text-xs md:text-base"
-              >12</td
-            >
+          <!-- Fila 4: Club de leones -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">4</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Club de leones</td>
+            <td class="py-2 px-4 border-b text-center">7</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">2</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 5: Villa del Carmen F.c -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">5</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Villa del Carmen F.c</td>
+            <td class="py-2 px-4 border-b text-center">6</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">2</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 6: Futuras estrellas F.c -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">6</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Futuras estrellas F.c</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">2</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-gray-300 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 7: Deportivo Central Moreno -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">7</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Deportivo Central Moreno</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 8: Atlético Marín F.c -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">8</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Atlético Marín F.c</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">1</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 9: Club deportivo Pamplona A -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">9</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Club deportivo Pamplona A</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 10: El puerto F.c -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">10</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">El puerto F.c</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">4</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </td>
+          </tr>
+          <!-- Fila 11: Club deportivo Pamplona B -->
+          <tr class="hover:bg-gray-800">
+            <td class="py-2 px-4 border-b text-left">11</td>
+            <td class="py-2 px-4 border-b text-left font-semibold">Club deportivo Pamplona B</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">3</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">0</td>
+            <td class="py-2 px-4 border-b text-center">
+              <div class="flex gap-1 justify-center">
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
+              </div>
+            </td>
           </tr>
         </tbody>
       </table>
@@ -204,7 +261,7 @@
       <div class="rounded-lg overflow-hidden shadow-lg max-w-xl mx-auto">
         <table class="w-full border-collapse">
           <thead>
-            <tr class=" font-bold bg-[#006600] text-white">
+            <tr class="font-bold bg-[#006600] text-white">
               <th
                 class="py-2 md:py-3 px-3 md:px-6 font-bold border border-gray-600 text-left text-xs md:text-base"
               >
@@ -230,7 +287,7 @@
                 12
               </td>
             </tr>
-            <tr class=" font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
+            <tr class="font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
               <td
                 class="py-2 md:py-3 px-3 md:px-6 border border-gray-600 font-medium text-xs md:text-base"
               >
@@ -268,7 +325,7 @@
       <div class="rounded-lg overflow-hidden shadow-lg max-w-xl mx-auto">
         <table class="w-full border-collapse">
           <thead>
-            <tr class=" font-bold bg-[#006600] text-white">
+            <tr class="font-bold bg-[#006600] text-white">
               <th
                 class="py-2 md:py-3 px-3 md:px-6 font-bold border border-gray-600 text-left text-xs md:text-base"
               >
@@ -294,7 +351,7 @@
                 5
               </td>
             </tr>
-            <tr class=" font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
+            <tr class="font-bold bg-gray-800/50 hover:bg-gray-700 transition-colors">
               <td
                 class="py-2 md:py-3 px-3 md:px-6 border border-gray-600 font-medium text-xs md:text-base"
               >
@@ -326,8 +383,8 @@
 
   <div class="text-center pt-4 md:pt-6">
     <button
-    onclick="location.href='/'"
-      class=" font-bold bg-[#ff3300] hover:bg-[#e62e00] text-white font-medium py-2 px-6 md:py-3 md:px-8 rounded-md transition-colors shadow-lg text-sm md:text-base"
+      onclick="location.href='/'"
+      class="font-bold bg-[#ff3300] hover:bg-[#e62e00] text-white font-medium py-2 px-6 md:py-3 md:px-8 rounded-md transition-colors shadow-lg text-sm md:text-base"
     >
       Volver
     </button>

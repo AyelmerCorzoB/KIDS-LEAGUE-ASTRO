@@ -14,7 +14,7 @@ if (botonRegistrar) {
     botonRegistrar.addEventListener('click', () => {
         RegistrarJugador()
         setTimeout(() => {
-            window.location.href = '/registro';
+            window.location.href = '/ingreso';
         }, 3000);
     });
 } else {

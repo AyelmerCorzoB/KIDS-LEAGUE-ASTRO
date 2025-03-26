@@ -9,10 +9,10 @@
 </header>
 
 <div class="min-h-screen flex items-center justify-center p-4">
-    <!-- Formulario de Jugador -->
+    <!-- Formulario de Campeonato -->
     <div
         class="bg-gradient-to-br from-[#054D06] via-[#1F8D11] to-[#2FC429] rounded-2xl shadow-2xl border-2 border-white/5 w-full max-w-md p-6 space-y-6"
-        id="formJugador"
+        id="formCampeonato"
     >
         <h2 class="text-2xl font-bold text-center text-white">
             REGISTRO DE <span class="text-[#FFD600]">CAMPEONATO</span>
@@ -21,13 +21,13 @@
         <form class="space-y-4">
             <div>
                 <label
-                    for="nombre"
+                    for="nombreCampeonato"
                     class="block text-sm font-medium text-white mb-1"
                     >Nombre del Campeonato</label
                 >
                 <input
                     type="text"
-                    id="nombre"
+                    id="nombreCampeonato"
                     placeholder="Ej: Rayos del catatumbo"
                     required
                     class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -36,13 +36,13 @@
 
             <div>
                 <label
-                    for="apellido"
+                    for="precioInscripcion"
                     class="block text-sm font-medium text-white mb-1"
                     >Precio de la inscripcion</label
                 >
                 <input
                     type="text"
-                    id="apellido"
+                    id="precioInscripcion"
                     placeholder="Ej: 150.000 por equipo"
                     required
                     class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
@@ -65,13 +65,13 @@
 
             <div>
                 <label
-                    for="fechaNacimiento"
+                    for="fechaFin"
                     class="block text-sm font-medium text-white mb-1"
                     >Fecha de Fin</label
                 >
                 <input
                     type="date"
-                    id="fechaNacimiento"
+                    id="fechaFin"
                     required
                     class="bg-white w-full px-3 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"
                 />
@@ -87,7 +87,7 @@
                 </button>
                 <button
                     type="button"
-                    id="mostrarFormJugador"
+                    id="registrarCampeonato"
                     class="bg-gradient-to-br from-orange-500 to-orange-600 text-white px-6 py-2 rounded-full font-bold transition-all duration-300 hover:scale-105 hover:shadow-lg focus:outline-none focus:ring-2 focus:ring-orange-500"
                 >
                     REGISTRAR
@@ -97,4 +97,4 @@
     </div>
 </div>
 
-<script src="../../scripts/registrojugador.js"></script>
+<script src="../../scripts/registro_campeonato.js"></script>

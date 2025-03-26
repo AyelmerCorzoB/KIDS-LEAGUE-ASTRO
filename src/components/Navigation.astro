@@ -14,6 +14,7 @@ const links = [
 const currentPath = new URL(Astro.request.url).pathname;
 const excludedPaths = ["/", "/index", "/arbitrospage"];
 const shouldHideRectangulo = excludedPaths.includes(currentPath);
+const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem('userLoggedIn') === 'true';
 ---
 
 {!shouldHideRectangulo && <Rectangulo />}
@@ -63,12 +64,21 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
           </li>
         ))
       }
-      <a
-        href="/login"
-        class="absolute right-10 bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
-      >
-        INGRESAR
-      </a>
+      {isLoggedIn ? (
+        <button
+          id="logout-button"
+          class="absolute right-10 bg-red-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-red-600 transition-colors duration-200 cursor-pointer"
+        >
+          CERRAR SESIÓN
+        </button>
+      ) : (
+        <a
+          href="/login"
+          class="absolute right-10 bg-orange-500 text-white border-2 border-white rounded-full w-44 h-12 flex justify-center items-center text-[24px] font-bold ml-auto hover:bg-orange-600 transition-colors duration-200"
+        >
+          INGRESAR
+        </a>
+      )}
     </ul>
   </nav>
 
@@ -126,8 +136,8 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
   </div>
 </header>
 
-<script>
-  function setupMobileMenu() {
+<script is:inline>
+function setupMobileMenu() {
     const menuToggle = document.getElementById("menu-toggle");
     const closeMenu = document.getElementById("close-menu");
     const mobileMenu = document.getElementById("mobile-menu");
@@ -174,4 +184,37 @@ const shouldHideRectangulo = excludedPaths.includes(currentPath);
   }
 
   document.addEventListener("astro:page-load", setupMobileMenu);
+  function setupLogout() {
+    const logoutButton = document.getElementById("logout-button");
+    const logoutButtonMobile = document.getElementById("logout-button-mobile");
+
+    const logout = () => {
+      localStorage.removeItem('userLoggedIn');
+      localStorage.removeItem('username');
+      window.location.href = "/";
+    };
+
+    if (logoutButton) {
+      logoutButton.addEventListener("click", logout);
+    }
+
+    if (logoutButtonMobile) {
+      logoutButtonMobile.addEventListener("click", logout);
+    }
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", () => {
+      setupMobileMenu();
+      setupLogout();
+    });
+  } else {
+    setupMobileMenu();
+    setupLogout();
+  }
+
+  document.addEventListener("astro:page-load", () => {
+    setupMobileMenu();
+    setupLogout();
+  });
 </script>

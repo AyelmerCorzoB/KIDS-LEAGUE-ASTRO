@@ -1,88 +1,87 @@
 <body
-    class="bg-green-600 bg-[url('/Images/BG.svg')] md:bg-[url('/Images/BG.svg'),url('/Images/BACKGROUND.svg')]"
+  class="bg-green-600 bg-[url('/Images/BG.svg')] md:bg-[url('/Images/BG.svg'),url('/Images/BACKGROUND.svg')]"
 >
-    <div class="container mx-auto relative">
-        <!-- Formulario -->
-        <form
-            class="w-[18rem] md:w-[25rem] flex flex-col justify-center items-center mt-[2vh] ml-[15vw] md:ml-[20vw]"
-        >
-            <!-- Logo -->
-            <div class="logo mb-8">
-                <img src="/Images/Logo.png" alt="Logo" class="w-70 h-auto" />
-            </div>
+  <div class="container mx-auto relative">
+    <!-- Formulario -->
+    <form
+      id="loginForm"
+      class="w-[18rem] md:w-[25rem] flex flex-col justify-center items-center mt-[2vh] ml-[15vw] md:ml-[20vw]"
+    >
+      <!-- Logo -->
+      <div class="logo mb-8">
+        <img src="/Images/Logo.png" alt="Logo" class="w-70 h-auto" />
+      </div>
 
-            <!-- Campo de usuario -->
-            <div class="relative mb-6 w-full">
-                <label class="block mb-4 font-bold text-gray-500" for="usuario"
-                ></label>
-                <div class="relative">
-                    <img
-                        class="absolute left-4 top-1/2 transform -translate-y-5/5 w-5 h-5"
-                        src="/Images/user.svg"
-                        alt="Usuario"
-                    />
-                    <input
-                        class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
-                        type="text"
-                        id="usuario"
-                        placeholder="USUARIO"
-                        required
-                    />
-                </div>
-            </div>
-
-            <!-- Campo de contraseña -->
-            <div class="relative mb-6 w-full">
-                <label
-                    class="block mb-4 font-bold text-gray-500"
-                    for="contrasena"></label>
-                <div class="relative">
-                    <img
-                        class="absolute left-4 top-1/2 transform -translate-y-5/6 w-5 h-5"
-                        src="/Images/contra.svg"
-                        alt="Contraseña"
-                    />
-                    <input
-                        class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-300 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
-                        type="password"
-                        id="contrasena"
-                        placeholder="CONTRASEÑA"
-                        required
-                    />
-                </div>
-            </div>
-
-            <!-- Botón de ingreso -->
-            <button
-                class="w-full py-3 bg-white border-none rounded-lg text-orange-500 font-bold text-lg cursor-pointer transition-colors hover:bg-green-400"
-                onclick="location.href='/ingreso'"
-            >
-                INGRESAR
-            </button>
-
-            <!-- Mensajes de error -->
-            <p id="mensaje" class="mt-4 text-red-500 text-sm text-center"></p>
-            <p id="mensaje2" class="mt-2 text-red-500 text-sm text-center"></p>
-        </form>
-
-        <!-- Personaje de login -->
-        <div
-            class="personaje-login hidden md:block absolute top-[10vh] right-[12vw]"
-        >
-            <img
-                src="/Images/personaje-login.svg"
-                alt="Personaje"
-                class="w-[19.922vw] max-w-[255px] h-[500px]"
-            />
+      <!-- Campo de usuario -->
+      <div class="relative mb-6 w-full">
+        <label class="block mb-4 font-bold text-gray-500" for="usuario"></label>
+        <div class="relative">
+          <img
+            class="absolute left-4 top-1/2 transform -translate-y-5/5 w-5 h-5"
+            src="/Images/user.svg"
+            alt="Usuario"
+          />
+          <input
+            class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+            type="text"
+            id="usuario"
+            name="usuario"
+            placeholder="USUARIO"
+            aria-label="Nombre de usuario"
+            required
+          />
         </div>
+      </div>
 
-        <!-- Balón de login -->
-        <div class="balon absolute hidden md:block bottom-[1vh] right-[30vw]">
-            <img
-                src="/Images/balon-login.svg"
-                alt="Balón"
-                class="w-24 h-auto"
-            />
+      <!-- Campo de contraseña -->
+      <div class="relative mb-6 w-full">
+        <label class="block mb-4 font-bold text-gray-500" for="contrasena"
+        ></label>
+        <div class="relative">
+          <img
+            class="absolute left-4 top-1/2 transform -translate-y-5/6 w-5 h-5"
+            src="/Images/contra.svg"
+            alt="Contraseña"
+          />
+          <input
+            class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-300 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+            type="password"
+            id="contrasena"
+            name="contrasena"
+            placeholder="CONTRASEÑA"
+            aria-label="Contraseña"
+            required
+          />
         </div>
+      </div>
+
+      <!-- Botón de ingreso -->
+      <button
+        class="w-full py-3 bg-white border-none rounded-lg text-orange-500 font-bold text-lg cursor-pointer transition-colors hover:bg-green-400"
+        type="submit"
+      >
+        INGRESAR
+      </button>
+      <p id="mensaje" class="mt-4 text-red-500 text-sm text-center"></p>
+
+<p class="text-center text-white pt-2">No tienes cuenta? <a href="/register" class="text-blue-500">registrate aqui</a></p>
+    </form>
+
+    <!-- Personaje de login -->
+    <div
+      class="personaje-login hidden md:block absolute top-[10vh] right-[12vw]"
+    >
+      <img
+        src="/Images/personaje-login.svg"
+        alt="Personaje"
+        class="w-[19.922vw] max-w-[255px] h-[500px]"
+      />
     </div>
+
+    <!-- Balón de login -->
+    <div class="balon absolute hidden md:block bottom-[1vh] right-[30vw]">
+      <img src="/Images/balon-login.svg" alt="Balón" class="w-24 h-auto" />
+    </div>
+  </div>
 </body>
+<script src="../scripts/login.js"></script>

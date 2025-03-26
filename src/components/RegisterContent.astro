@@ -1,0 +1,67 @@
+<body
+  class="bg-green-600 bg-[url('/Images/BG.svg')] md:bg-[url('/Images/BG.svg'),url('/Images/BACKGROUND.svg')]"
+>
+<div class="container mx-auto relative">
+    <!-- Formulario de Registro -->
+    <form id="registerForm" class="w-[18rem] md:w-[25rem] flex flex-col justify-center items-center mt-[2vh] ml-[15vw] md:ml-[20vw]">
+        <!-- Logo -->
+        <div class="logo mb-8">
+            <img src="/Images/Logo.png" alt="Logo" class="w-70 h-auto" />
+        </div>
+        
+        <!-- Campo de usuario -->
+        <div class="relative mb-4 w-full">
+            <div class="relative">
+                <img class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" 
+                     src="/Images/user.svg" alt="Usuario"/>
+                <input class="w-full p-4 pl-12 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+                       type="text" id="nuevoUsuario" placeholder="NOMBRE DE USUARIO" required />
+            </div>
+        </div>
+
+        <!-- Campo de contraseña -->
+        <div class="relative mb-4 w-full">
+            <div class="relative">
+                <img class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" 
+                     src="/Images/contra.svg" alt="Contraseña"/>
+                <input class="w-full p-4 pl-12 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+                       type="password" id="nuevaContrasena" placeholder="CONTRASEÑA" required />
+            </div>
+        </div>
+
+        <!-- Confirmar contraseña -->
+        <div class="relative mb-6 w-full">
+            <div class="relative">
+                <img class="absolute left-4 top-1/2 transform -translate-y-1/2 w-5 h-5" 
+                     src="/Images/contra.svg" alt="Confirmar"/>
+                <input class="w-full p-4 pl-12 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+                       type="password" id="confirmarContrasena" placeholder="CONFIRMAR CONTRASEÑA" required />
+            </div>
+        </div>
+
+        <!-- Botón de registro -->
+        <button class="w-full py-3 bg-white border-none rounded-lg text-orange-500 font-bold text-lg cursor-pointer transition-colors hover:bg-green-400"
+                type="submit">
+            REGISTRARSE
+        </button>
+
+        <!-- Enlace para login -->
+        <p class="mt-4 text-gray-100 text-sm">
+            ¿Ya tienes cuenta? <a href="/login" class="text-yellow-400 hover:underline">Inicia sesión</a>
+        </p>
+
+        <!-- Mensajes de error/éxito -->
+        <div id="registerMessages" class="mt-4 text-center w-full">
+            <p id="registerError" class="text-red-500 text-sm"></p>
+            <p id="registerSuccess" class="text-green-500 text-sm"></p>
+        </div>
+    </form>
+
+    <!-- Personaje de registro (puedes usar uno diferente) -->
+    <div class="personaje-registro hidden md:block absolute top-[10vh] right-[12vw]">
+        <img src="/Images/personaje-login.svg" alt="Personaje" class="w-[19.922vw] max-w-[255px] h-[500px]" />
+    </div>
+</div>
+</body>
+
+<script src="../scripts/register.js"></script>
