@@ -2,68 +2,68 @@
 // You can add any Astro-specific logic here if needed
 ---
 
-<footer class="w-full py-4 px-4 sm:px-6 shadow-sm">
-    <div class="container mx-auto flex flex-row items-center justify-between gap-4">
-      <!-- Logo -->
+<footer class="w-full py-6 px-6 2xl:py-8 2xl:px-8 shadow-sm ">
+  <div class="container mx-auto flex flex-row items-center justify-between gap-6">
+      <!-- Logo - Tamaño aumentado para 2xl -->
       <a id="kidsleague-logo" class="transform transition-transform duration-300 hover:opacity-80 focus:outline-none focus:ring-2 focus:ring-green-500 rounded-md">
-        <img 
-          class="w-20 sm:w-[6.25rem]" 
-          src="/Images/Logo.png" 
-          alt="Kids League Logo"
-          width="100"
-          height="40"
-        >
+          <img 
+              class="w-20 sm:w-[6.25rem] 2xl:w-32" 
+              src="/Images/Logo.png" 
+              alt="Kids League Logo"
+              width="128"
+              height="64"
+          >
       </a>
   
-      <!-- Redes Sociales -->
-      <div class="bg-[#139e15] py-2 px-4 rounded-[0.625rem] flex items-center gap-3 sm:gap-[0.938rem] shadow-md hover:shadow-lg transition-shadow duration-300">
-        <!-- WhatsApp -->
-        <a 
-          href="#" 
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
-          aria-label="Contact us on WhatsApp"
-        >
-          <img 
-            src="/Images/whatsapp.png" 
-            alt="" 
-            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
-            width="24"
-            height="24"
+      <!-- Redes Sociales - Contenedor más grande para 2xl -->
+      <div class="bg-[#139e15] rounded-[0.625rem] flex items-center justify-center gap-4 sm:gap-[0.938rem] 2xl:gap-6 p-2 2xl:p-3 shadow-md hover:shadow-lg transition-shadow duration-300">
+          <!-- WhatsApp -->
+          <a 
+              href="#" 
+              class="inline-flex items-center justify-center w-10 h-10 2xl:w-14 2xl:h-14 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+              aria-label="Contact us on WhatsApp"
           >
-        </a>
+              <img 
+                  src="/Images/whatsapp.png" 
+                  alt="WhatsApp" 
+                  class="w-6 h-6 sm:w-7 sm:h-7 2xl:w-9 2xl:h-9 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+                  width="36"
+                  height="36"
+              >
+          </a>
   
-        <!-- Facebook -->
-        <a 
-          href="#" 
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
-          aria-label="Follow us on Facebook"
-        >
-          <img 
-            src="/Images/facebook.png" 
-            alt="" 
-            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
-            width="24"
-            height="24"
+          <!-- Facebook -->
+          <a 
+              href="#" 
+              class="inline-flex items-center justify-center w-10 h-10 2xl:w-14 2xl:h-14 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+              aria-label="Follow us on Facebook"
           >
-        </a>
+              <img 
+                  src="/Images/facebook.png" 
+                  alt="Facebook" 
+                  class="w-6 h-6 sm:w-7 sm:h-7 2xl:w-9 2xl:h-9 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+                  width="36"
+                  height="36"
+              >
+          </a>
   
-        <!-- TikTok -->
-        <a 
-          href="#" 
-          class="inline-flex items-center justify-center w-8 h-8 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
-          aria-label="Follow us on TikTok"
-        >
-          <img 
-            src="/Images/tiktok.png" 
-            alt="" 
-            class="w-5 h-5 sm:w-6 sm:h-6 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
-            width="24"
-            height="24"
+          <!-- TikTok -->
+          <a 
+              href="#" 
+              class="inline-flex items-center justify-center w-10 h-10 2xl:w-14 2xl:h-14 rounded-full transform transition-all duration-300 hover:scale-110 focus:outline-none focus:ring-2 focus:ring-white"
+              aria-label="Follow us on TikTok"
           >
-        </a>
+              <img 
+                  src="/Images/tiktok.png" 
+                  alt="TikTok" 
+                  class="w-6 h-6 sm:w-7 sm:h-7 2xl:w-9 2xl:h-9 filter brightness-0 invert hover:brightness-100 hover:invert-0 transition-all duration-300"
+                  width="36"
+                  height="36"
+              >
+          </a>
       </div>
-    </div>
-  </footer>
+  </div>
+</footer>
   <script is:inline>
     document.addEventListener('DOMContentLoaded', () => {
       const kidsLeagueLogo = document.getElementById('kidsleague-logo');

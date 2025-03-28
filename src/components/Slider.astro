@@ -11,7 +11,6 @@ const newsItems = [
       marca internacional.
       Descubre quién es el nuevo aliado
       de la liga.
-      <b>¡Haz clic aquí!</b>
     `,
     imageUrl: "/Images/noticia1.jpg",
   },
@@ -38,7 +37,6 @@ const newsItems = [
       que los jugadores mejoren sus
       habilidades y estén en su mejor
       forma para la próxima temporada.
-      <span class="font-bold">¡Descubre más!</span>
     `,
     imageUrl: "/Images/noticia3.jpg",
   },
@@ -50,49 +48,56 @@ const newsItems = [
       temporada ya están abiertas.
       Asegura tu lugar en la liga y
       vive la emoción del fútbol infantil.
-      <span class="font-bold">¡Inscríbete ahora!<span>
     `,
     imageUrl: "/Images/noticia4.jpg",
   },
 ];
 ---
 
-<section class="relative my-16 px-4 pt-10 mx-auto max-w-2xl 2xl:max-w-4xl">
+<section class="relative my-16 px-4 pt-10 mx-auto max-w-2xl 2xl:max-w-4xl flex flex-col items-center justify-center min-h-[600px] 2xl:min-h-[800px]">
   <h2 class="text-2xl md:text-3xl 2xl:text-4xl text-center text-white font-bold mb-8 2xl:mb-12">ÚLTIMAS NOTICIAS</h2>
   
   <!-- Carrusel -->
   <div id="news-carousel" class="relative w-full" data-carousel="slide">
     <!-- Contenedor del carrusel -->
-    <div class="relative overflow-hidden rounded-lg mx-auto max-w-lg 2xl:max-w-2xl" style="height: 500px; @media (min-width: 1536px) { height: 800px; }">
-      {
-        newsItems.map((news, index) => (
-          <div 
-            class={`absolute w-full h-full transition-opacity duration-700 ease-in-out ${index === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
-            data-carousel-item={index === 0 ? 'active' : ''}
-          >
-            <NewsCard
-              title={news.title}
-              description={news.description}
-              imageUrl={news.imageUrl}
-            />
+    <div class="relative overflow-hidden rounded-lg mx-auto max-w-lg 2xl:max-w-2xl h-[400px] 2xl:h-[500px]">
+      {newsItems.map((news, index) => (
+        <div 
+          class={`absolute inset-0 w-full h-full transition-opacity duration-700 ease-in-out flex items-center justify-center ${index === 0 ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} 
+          data-carousel-item={index === 0 ? 'active' : ''}
+        >
+
+          <div class="rounded-lg bg-green-700 shadow-lg overflow-hidden w-full h-full flex flex-col">
+            <div class="w-full h-48 2xl:h-64 overflow-hidden">
+              <img 
+                src={news.imageUrl || "/placeholder.svg"} 
+                alt={news.title} 
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div class="p-4 2xl:p-6 flex-grow flex flex-col">
+              <h3 class="text-xl 2xl:text-3xl font-bold mb-2 text-white">{news.title}</h3>
+              <p class="text-gray-300 text-sm 2xl:text-2xl mb-4">{news.description}</p>
+              <a href="#" class="mt-auto mb-2 inline-block px-4 py-2 bg-orange-500 text-white rounded hover:bg-orange-600 transition-colors text-sm 2xl:text-base">
+                Leer más
+              </a>
+            </div>
           </div>
-        ))
-      }
+        </div>
+      ))}
     </div>
 
     <!-- Indicadores del carrusel -->
-    <div class="absolute z-30 flex -translate-x-1/2 bottom-5 left-1/2 space-x-3 rtl:space-x-reverse">
-      {
-        newsItems.map((_, index) => (
-          <button
-            type="button"
-            class={`w-3 h-3 2xl:w-4 2xl:h-4 rounded-full ${index === 0 ? 'bg-white' : 'bg-white/50'} hover:bg-white transition-all duration-300`}
-            aria-current={index === 0 ? "true" : "false"}
-            aria-label={`Noticia ${index + 1}`}
-            data-carousel-slide-to={index}
-          ></button>
-        ))
-      }
+    <div class="absolute z-30 flex -translate-x-1/2 -bottom-12 left-1/2 space-x-3 rtl:space-x-reverse">
+      {newsItems.map((_, index) => (
+        <button
+          type="button"
+          class={`w-3 h-3 2xl:w-4 2xl:h-4 rounded-full ${index === 0 ? 'bg-white' : 'bg-white/50'} hover:bg-white transition-all duration-300`}
+          aria-current={index === 0 ? "true" : "false"}
+          aria-label={`Noticia ${index + 1}`}
+          data-carousel-slide-to={index}
+        ></button>
+      ))}
     </div>
 
     <!-- Controles del carrusel -->
@@ -136,7 +141,6 @@ const newsItems = [
     </button>
   </div>
 </section>
-
 <script>
   // Script para manejar el carrusel
   document.addEventListener('DOMContentLoaded', function() {
