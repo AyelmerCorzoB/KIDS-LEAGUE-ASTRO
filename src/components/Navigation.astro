@@ -53,7 +53,7 @@ const isLoggedIn = typeof window !== 'undefined' && localStorage.getItem('userLo
           <li>
             <a
               href={link.href}
-              class={`no-underline mr-[1.2vw] text-[0.9rem] transition-all duration-200 ${
+              class={`no-underline mr-[1.2vw] text-[0.9rem] 2xl:text-[1.2rem] transition-all duration-200 ${
                 currentPath === link.href
                   ? "text-yellow-400 text-base"
                   : "text-white hover:text-yellow-400 hover:text-base"

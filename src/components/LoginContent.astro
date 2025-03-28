@@ -1,28 +1,26 @@
-<body
-  class="bg-green-600 bg-[url('/Images/BG.svg')] md:bg-[url('/Images/BG.svg'),url('/Images/BACKGROUND.svg')]"
->
-  <div class="container mx-auto relative">
+<body class="bg-green-600 bg-[url('/Images/BG.svg')] md:bg-[url('/Images/BG.svg'),url('/Images/BACKGROUND.svg')] bg-cover bg-no-repeat">
+  <div class="container mx-auto relative max-w-7xl 2xl:max-w-[1800px]">
     <!-- Formulario -->
     <form
       id="loginForm"
-      class="w-[18rem] md:w-[25rem] flex flex-col justify-center items-center mt-[2vh] ml-[15vw] md:ml-[20vw]"
+      class="w-[18rem] md:w-[25rem] lg:w-[30rem] 2xl:w-[35rem] flex flex-col justify-center items-center mt-[2vh] md:mt-[5vh] ml-[15vw] md:ml-[20vw] 2xl:ml-[25vw] 2xl:mt-[10vh]"
     >
       <!-- Logo -->
-      <div class="logo mb-8">
-        <img src="/Images/Logo.png" alt="Logo" class="w-70 h-auto" />
+      <div class="logo mb-8 2xl:mb-12">
+        <img src="/Images/Logo.png" alt="Logo" class="w-70 2xl:w-80 h-auto" />
       </div>
 
       <!-- Campo de usuario -->
-      <div class="relative mb-6 w-full">
-        <label class="block mb-4 font-bold text-gray-500" for="usuario"></label>
+      <div class="relative mb-6 2xl:mb-8 w-full">
+        <label class="block mb-4 2xl:mb-5 font-bold text-gray-500" for="usuario"></label>
         <div class="relative">
           <img
-            class="absolute left-4 top-1/2 transform -translate-y-5/5 w-5 h-5"
+            class="absolute left-4 top-1/2 transform -translate-y-5/5 w-5 h-5 2xl:w-6 2xl:h-6"
             src="/Images/user.svg"
             alt="Usuario"
           />
           <input
-            class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+            class="w-full p-4 2xl:p-5 pl-12 2xl:pl-14 mb-4 2xl:mb-5 rounded-lg border-1 border-gray-100 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors text-lg 2xl:text-xl"
             type="text"
             id="usuario"
             name="usuario"
@@ -34,17 +32,16 @@
       </div>
 
       <!-- Campo de contraseña -->
-      <div class="relative mb-6 w-full">
-        <label class="block mb-4 font-bold text-gray-500" for="contrasena"
-        ></label>
+      <div class="relative mb-6 2xl:mb-8 w-full">
+        <label class="block mb-4 2xl:mb-5 font-bold text-gray-500" for="contrasena"></label>
         <div class="relative">
           <img
-            class="absolute left-4 top-1/2 transform -translate-y-5/6 w-5 h-5"
+            class="absolute left-4 top-1/2 transform -translate-y-5/6 w-5 h-5 2xl:w-6 2xl:h-6"
             src="/Images/contra.svg"
             alt="Contraseña"
           />
           <input
-            class="w-full p-4 pl-12 mb-4 rounded-lg border-1 border-gray-300 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors"
+            class="w-full p-4 2xl:p-5 pl-12 2xl:pl-14 mb-4 2xl:mb-5 rounded-lg border-1 border-gray-300 bg-transparent text-gray-100 focus:border-yellow-400 focus:outline-none transition-colors text-lg 2xl:text-xl"
             type="password"
             id="contrasena"
             name="contrasena"
@@ -57,30 +54,30 @@
 
       <!-- Botón de ingreso -->
       <button
-        class="w-full py-3 bg-white border-none rounded-lg text-orange-500 font-bold text-lg cursor-pointer transition-colors hover:bg-green-400"
+        class="w-full py-3 2xl:py-4 bg-white border-none rounded-lg text-orange-500 font-bold text-lg 2xl:text-xl cursor-pointer transition-colors hover:bg-green-400"
         type="submit"
       >
         INGRESAR
       </button>
-      <p id="mensaje" class="mt-4 text-red-500 text-sm text-center"></p>
+      <p id="mensaje" class="mt-4 2xl:mt-5 text-red-500 text-sm 2xl:text-base text-center"></p>
 
-<p class="text-center text-white pt-2">No tienes cuenta? <a href="/register" class="text-blue-500">registrate aqui</a></p>
+      <p class="text-center text-white pt-2 2xl:pt-3 text-base 2xl:text-lg">
+        No tienes cuenta? <a href="/register" class="text-blue-500 hover:text-blue-300 transition-colors">regístrate aquí</a>
+      </p>
     </form>
 
     <!-- Personaje de login -->
-    <div
-      class="personaje-login hidden md:block absolute top-[10vh] right-[12vw]"
-    >
+    <div class="personaje-login hidden md:block absolute top-[10vh] 2xl:top-[15vh] right-[12vw] 2xl:right-[15vw]">
       <img
         src="/Images/personaje-login.svg"
         alt="Personaje"
-        class="w-[19.922vw] max-w-[255px] h-[500px]"
+        class="w-[19.922vw] max-w-[255px] 2xl:max-w-[350px] h-auto 2xl:h-[600px]"
       />
     </div>
 
     <!-- Balón de login -->
-    <div class="balon absolute hidden md:block bottom-[1vh] right-[30vw]">
-      <img src="/Images/balon-login.svg" alt="Balón" class="w-24 h-auto" />
+    <div class="balon absolute hidden md:block bottom-[1vh] right-[30vw] 2xl:right-[30vw]">
+      <img src="/Images/balon-login.svg" alt="Balón" class="w-24 2xl:w-32 h-auto" />
     </div>
   </div>
 </body>

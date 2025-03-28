@@ -11,6 +11,6 @@ const isRegistroPage = currentPath.includes("/sesiones/sesion-arbitro");
 const isDirectivoPage = currentPath.includes("/sesiones/sesion-directivo");
 ---
 
-<div class="flex justify-center w-full h-auto">
+<div class="flex justify-center w-full h-auto 2xl:pt-40 2xl:pb-40">
   {isDirectivoPage ? <CardDirectivos /> : (isRegistroPage ? <CardArbitrosAdmin /> : <Card />)}
 </div>
