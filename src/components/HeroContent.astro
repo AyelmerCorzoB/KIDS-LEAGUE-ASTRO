@@ -1,5 +1,5 @@
 <div class="absolute top-[10rem] md:top-[1rem] w-full">
-    <h1 class="absolute top-[-40px] left-[15vw] md:top-[110.27px] md:left-[2rem] text-[24px] md:text-[40px] font-bold w-[251.77px] h-[39.87px] text-white">
+    <h1 class="absolute top-[-40px] left-[15vw] md:top-[110.27px] md:left-[2rem] md:text-[40px] font-bold w-[251.77px] h-[39.87px] text-white">
         <span class="text-[#ffc107]">KIDS</span>LEAGUE
     </h1>
     
@@ -14,14 +14,38 @@
 </div>
 
 <div class="absolute top-[350px] md:top-[430px] left-[15vw] md:left-[2rem] flex flex-row md:flex-row gap-4">
-    <button
-        class="w-[150px] md:w-[200px] h-[50px] md:h-[61.79px] bg-transparent text-white border-2 border-white rounded-[40px] text-[18px] md:text-[24px] font-bold cursor-pointer"
+    <button onclick="window.location.href='/about'"
+        class="w-[150px] md:w-[200px] h-[50px] md:h-[61.79px] bg-transparent text-white border-2 border-white xl:rounded-[20px] rounded-[40px] text-[18px] md:text-[24px] font-bold cursor-pointer"
     >
         VER MÁS
     </button>
-    <button
-        class="w-[150px] md:w-[200px] h-[50px] md:h-[61.79px] bg-transparent text-white border-2 border-white rounded-[40px] text-[18px] md:text-[24px] font-bold cursor-pointer"
+    <button id="shareButton"
+        class="w-[150px] md:w-[200px] h-[50px] md:h-[61.79px] bg-transparent text-white border-2 border-white xl:rounded-[20px] rounded-[40px] text-[18px] md:text-[24px] font-bold cursor-pointer"
     >
         COMPARTIR
     </button>
 </div>
+
+<script is:inline>
+    document.getElementById('shareButton').addEventListener('click', async () => {
+        const shareData = {
+            title: 'KIDSLEAGUE',
+            text: '¡Únete a nuestra comunidad de fútbol infantil! Promoviendo trabajo en equipo, disciplina y diversión.',
+            url: 'https://kidsleague.netlify.app/',
+        };
+        
+        try {
+            if (navigator.share) {
+                await navigator.share(shareData);
+            } else {
+                
+                const shareUrl = `https://wa.me/?text=${encodeURIComponent(shareData.text + ' ' + shareData.url)}`;
+                window.open(shareUrl, '_blank');
+            }
+        } catch (error) {
+            console.error('Error al compartir:', error);
+            
+            prompt('Copiar enlace para compartir:', shareData.url);
+        }
+    });
+</script>
