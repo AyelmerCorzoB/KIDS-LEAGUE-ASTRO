@@ -1,5 +1,4 @@
 
-
 // Selecciona el botón por su ID
 const botonSiguiente = document.getElementById('mostrarFormJugador');
 const botonRegistrar = document.getElementById('mostrarFormAcudiante')

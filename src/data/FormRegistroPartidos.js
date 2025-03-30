@@ -127,6 +127,6 @@ function guardarDetalles() {
     document.body.appendChild(mensajeExito);
 
     setTimeout(() => {
-        location.href = "Registro.html";
+        location.href = "/sesiones/sesion-arbitro";
     }, 3000);
 }
